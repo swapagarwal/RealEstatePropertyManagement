@@ -1,4 +1,6 @@
 #pragma once
+#include "Register.h"
+#include "Login.h"
 
 namespace RealEstatePropertyManagement {
 
@@ -67,6 +69,7 @@ namespace RealEstatePropertyManagement {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Register";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// button2
 			// 
@@ -76,6 +79,7 @@ namespace RealEstatePropertyManagement {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Login";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
 			// button3
 			// 
@@ -105,11 +109,21 @@ namespace RealEstatePropertyManagement {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"Home";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+				 //this->Hide();
+				 Register^ reg = gcnew Register();
+				 reg->ShowDialog();
+			 }
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+				 //this->Hide();
+				 Login^ login = gcnew Login();
+				 login->ShowDialog();
+			 }
+};
 }
 
