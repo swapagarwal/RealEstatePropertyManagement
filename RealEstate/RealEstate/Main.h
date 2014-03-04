@@ -357,6 +357,7 @@ namespace RealEstate {
 			this->go->TabIndex = 21;
 			this->go->Text = L"GO";
 			this->go->UseVisualStyleBackColor = false;
+			this->go->Click += gcnew System::EventHandler(this, &Main::go_Click);
 			// 
 			// Main
 			// 
@@ -420,6 +421,10 @@ private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^ 
 				 MessageBox::Show("Wrong Details");
 		 }
 private: System::Void password_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) {
+			 sell^ f2 = gcnew sell();
+			 f2->ShowDialog();
 		 }
 };
 }
