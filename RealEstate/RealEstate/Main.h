@@ -416,7 +416,10 @@ private: System::Void Main_Load(System::Object^  sender, System::EventArgs^  e) 
 		 }
 private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 if(db.login_verify(username->Text,password->Text)==true)
-				 MessageBox::Show("SUCCESS");
+			 {
+				 array<String^>^ details=db.get_user_details(username->Text,password->Text);
+				 MessageBox::Show("Welcome, "+details[3]);
+			 }
 			 else
 				 MessageBox::Show("Wrong Details");
 		 }

@@ -8,7 +8,7 @@ public:
 	Database(void);
 	 bool login_verify(String^ user, String^ pass);// Function to check the login details.
 
-	// int get_user_id(String^ user, String^ name, String^ contact); // Function to get the user id by sending username, Name, and contact as parameter.
+	 array<String^>^ get_user_details(String^ user, String^ pass); // Function to get the user id by sending username, Name, and contact as parameter.
 
 	 void user_reg(String^ user, String^ pass, String^ name, String^ email, String^ contact, String^ location);//User registration function(Send all required columns as parameter in order)
 

@@ -138,15 +138,25 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 cmd->Connection->Close();
 		 return ids;
 	  }
-	 /* String^ Database::get_property_details(int id)
-	  {
-		  String^ s="Select * From `repm`.`properties` where id="+id+";";
-		  MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
-		  MySqlDataReader^ mydata=gcnew MySqlDataReader();
-		  cmd->Connection->Open();
-		  mydata=cmd->ExecuteReader();
-		  mydata->Read();
-		  String^ ans=mydata->GetString();
-		  cmd->Connection->Close();
-		  return ans;
-	  }*/
+	 array<String^>^ Database::get_user_details(String^ user, String^ pass)
+	 {
+		 String^ s="Select * From repm.users where username='"+user+"' and password='"+pass+"';";
+		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
+		 MySqlDataReader^ mydata;
+		 try
+		 {
+		 cmd->Connection->Open();
+		 mydata=cmd->ExecuteReader();
+		 mydata->Read();
+		 }
+		 catch(Exception^ ex)
+		 {
+			 cmd->Connection->Close();
+			 MessageBox::Show(ex->Message);
+		 }
+		 array<String^>^ details=gcnew array<String^>(7);
+		 for(int i=0;i<7;i++)
+			 details[i]=mydata->GetString(i);
+		 cmd->Connection->Close();
+		 return details;
+	 }
