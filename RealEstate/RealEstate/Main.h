@@ -80,6 +80,7 @@ namespace RealEstate {
 
 
 
+
 	protected: 
 
 
@@ -214,7 +215,6 @@ namespace RealEstate {
 			this->password->Size = System::Drawing::Size(145, 21);
 			this->password->TabIndex = 1;
 			this->password->UseSystemPasswordChar = true;
-			this->password->TextChanged += gcnew System::EventHandler(this, &Main::password_TextChanged);
 			// 
 			// username
 			// 
@@ -336,7 +336,6 @@ namespace RealEstate {
 			this->city->Name = L"city";
 			this->city->Size = System::Drawing::Size(149, 30);
 			this->city->TabIndex = 20;
-			this->city->SelectedIndexChanged += gcnew System::EventHandler(this, &Main::city_SelectedIndexChanged);
 			// 
 			// go
 			// 
@@ -387,9 +386,6 @@ namespace RealEstate {
 #pragma endregion
 public : Database db;
 private: System::Void REGISTER_Click(System::Object^  sender, System::EventArgs^  e) {
-			 //this->Hide();
-			 //Register^ f2 = gcnew Register();
-			 //f2->ShowDialog();
 			 Register^ f2 = gcnew Register();
 			 f2->ShowDialog();
 		 }
@@ -403,16 +399,15 @@ private: System::Void login_Click(System::Object^  sender, System::EventArgs^  e
 				 this->panel1->Visible = false;
 			 }
 		 }
-private: System::Void city_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void Main_Load(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void Main_Load(System::Object^  sender, System::EventArgs^  e) 
+		 {
 			 array<String^>^ cities={"Agra","Raipur","Gwalior","Bhopal","Indore","Churu","Calcutta","Delhi","Guwahati","Jaipur",};
 			 city->BeginUpdate();
-   for ( int i = 0; i < 10; i++ )
-   {
-      city->Items->Add(cities[i]);
-   }
-   city->EndUpdate();
+			 for ( int i = 0; i < 10; i++ )
+			 {
+				 city->Items->Add(cities[i]);
+			 }
+			 city->EndUpdate();
 		 }
 private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 if(db.login_verify(username->Text,password->Text)==true)
@@ -423,9 +418,8 @@ private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^ 
 			 else
 				 MessageBox::Show("Wrong Details");
 		 }
-private: System::Void password_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
 			 sell^ f2 = gcnew sell();
 			 f2->ShowDialog();
 		 }

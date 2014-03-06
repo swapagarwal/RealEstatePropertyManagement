@@ -92,22 +92,47 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 MessageBox::Show(ex->Message);
 		 }
 	 }
-	  array< Int64 >^ Database::search(array<String^>^ props,int size) // Function to search for an entry in properties table. Send the parameters as array. "" should be send in place of those filters which are not to be included in search
+	  array< Int64 >^ Database::search(array<String^>^ props) // Function to search for an entry in properties table. Send the parameters as array. "" should be send in place of those filters which are not to be included in search
 	 {														// This Function returns an Int32 array containing the ids of the resultant rows.	
 		 array<String^>^ names={"address","city","area","price","sell_rent","image_path","floor_plan","map","username","bhk","type","decription","floor_number","total_floors","age"};
-		 String^ query="SELECT SQL_CALC_FOUND_ROWS * From repm.properties WHERE ";
+		 String^ query="SELECT * From repm.properties WHERE ";
 		int count=0;
-		 for(int i=0;i<size;i++)
+		int k=0;
+		 for(int i=0;i<18;i++)
 		 {
 			 if(props[i]!="")
 			 {
 				 if(count==0)
-				 {query=query+names[i]+"='"+props[i]+"'";++count;}
+				 {
+					 if(i==2 || i==4 || i==11)
+					 {query=query+names[k]+">='"+props[i]+"' AND "+names[k]+"<='"+props[i+1]+"'";++i;}
+					 else if(i==17)
+						 query=query+names[k]+"<='"+props[i]+"'";
+					 else
+						 query=query+names[k]+"='"+props[i]+"'";
+					 ++k;
+					 ++count;
+				 }
 				 else
-					 query=query+" AND "+names[i]+"='"+props[i]+"'";
+				 {
+					 if(i==2 || i==4 || i==11)
+					 {query=query+" AND "+names[k]+">='"+props[i]+"' AND "+names[k]+"<='"+props[i+1]+"'";++i;}
+					 else if(i==17)
+						 query=query+" AND "+names[k]+"<='"+props[i]+"'";
+					 else
+						 query=query+" AND "+names[k]+"='"+props[i]+"'";
+					 ++k;
+				 }
+			 }
+			 else
+			 {
+				 ++k;
+				  if(i==3 || i==5 || i==12)
+					  --k;
 			 }
 		 }
 		 query=query+";";
+		 MessageBox::Show(query);
 		 MySqlCommand^ cmd=gcnew MySqlCommand(query,connection);
 		 MySqlCommand^ rows=gcnew MySqlCommand("SELECT Found_Rows()",connection);
 		 MySqlDataReader^ mydata;
@@ -125,6 +150,8 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			cmd->Connection->Open();
 			mydata=cmd->ExecuteReader();
 			ids=gcnew array<Int64>(1000);
+			for(int i=0;i<1000;i++)
+				ids[i]=(-1);
 			int i;
 			 for(i=1;mydata->Read();++i)
 				 ids[i]=mydata->GetInt64(0);
@@ -157,6 +184,28 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 array<String^>^ details=gcnew array<String^>(7);
 		 for(int i=0;i<7;i++)
 			 details[i]=mydata->GetString(i);
+		 cmd->Connection->Close();
+		 return details;
+	 }
+	 array<String^>^ Database::get_property_details(int id)
+	 {
+		 String^ s="Select * From repm.properties where id='"+id+"';";
+		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
+		 MySqlDataReader^ mydata;
+		 array<String^>^ details=gcnew array<String^>(16);
+		 try
+		 {
+			 cmd->Connection->Open();
+			 mydata=cmd->ExecuteReader();
+			 mydata->Read();
+			 for(int i=0;i<16;i++)
+				 details[i]=mydata->GetString(i);
+		 }
+		 catch(Exception^ ex)
+		 {
+			cmd->Connection->Close();
+			 MessageBox::Show(ex->Message);
+		 }
 		 cmd->Connection->Close();
 		 return details;
 	 }
