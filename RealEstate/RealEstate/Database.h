@@ -5,6 +5,7 @@ ref class Database
 {
 public:
 	MySqlConnection^ connection;
+	array<String^>^ user_details;
 	Database(void);
 	// Function to check the login details.
 	 bool login_verify(String^ user, String^ pass);

@@ -8,12 +8,12 @@
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
 
-Database::Database(void)
+	 Database::Database(void)
 {
 	String^ constring="datasource=127.0.0.1;port=3306;user=root;password=toor"; // Defining Connection. Change the name of database, port, username and password before using
 	connection=gcnew MySqlConnection(constring);
 }
-bool Database::login_verify(String^ user, String^ pass) // Function to check the login details.
+	 bool Database::login_verify(String^ user, String^ pass) // Function to check the login details.
 		  {
 			  if(user=="" || pass=="")
 				  return false;
@@ -31,7 +31,9 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 					}
 					cmd->Connection->Close();
 					if(count>=1)
+					{
 						return true;
+					}
 					else
 						false;
 			  }
@@ -92,12 +94,13 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 MessageBox::Show(ex->Message);
 		 }
 	 }
-	  array< Int64 >^ Database::search(array<String^>^ props) // Function to search for an entry in properties table. Send the parameters as array. "" should be send in place of those filters which are not to be included in search
+	 array< Int64 >^ Database::search(array<String^>^ props) // Function to search for an entry in properties table. Send the parameters as array. "" should be send in place of those filters which are not to be included in search
 	 {														// This Function returns an Int32 array containing the ids of the resultant rows.	
 		 array<String^>^ names={"address","city","area","price","sell_rent","image_path","floor_plan","map","username","bhk","type","decription","floor_number","total_floors","age"};
 		 String^ query="SELECT * From repm.properties WHERE ";
 		int count=0;
 		int k=0;
+		//user_details[2]
 		 for(int i=0;i<18;i++)
 		 {
 			 if(props[i]!="")
