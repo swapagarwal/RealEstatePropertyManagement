@@ -61,6 +61,15 @@ namespace RealEstate {
 	private: System::Windows::Forms::RadioButton^  rental;
 	private: System::Windows::Forms::ComboBox^  city;
 	private: System::Windows::Forms::Button^  go;
+	private: System::Windows::Forms::LinkLabel^  linkLabel1;
+	private: System::Windows::Forms::Panel^  logoutpanel;
+
+
+	private: System::Windows::Forms::Button^  Logout;
+	private: System::Windows::Forms::Button^  myaccount;
+
+
+
 
 
 
@@ -113,7 +122,12 @@ namespace RealEstate {
 			this->rental = (gcnew System::Windows::Forms::RadioButton());
 			this->city = (gcnew System::Windows::Forms::ComboBox());
 			this->go = (gcnew System::Windows::Forms::Button());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->logoutpanel = (gcnew System::Windows::Forms::Panel());
+			this->myaccount = (gcnew System::Windows::Forms::Button());
+			this->Logout = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
+			this->logoutpanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -123,7 +137,7 @@ namespace RealEstate {
 			this->label1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(999, 52);
+			this->label1->Size = System::Drawing::Size(952, 52);
 			this->label1->TabIndex = 0;
 			// 
 			// login1
@@ -136,7 +150,7 @@ namespace RealEstate {
 			this->login1->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->login1->ForeColor = System::Drawing::Color::White;
-			this->login1->Location = System::Drawing::Point(908, 12);
+			this->login1->Location = System::Drawing::Point(861, 12);
 			this->login1->Name = L"login1";
 			this->login1->Size = System::Drawing::Size(79, 29);
 			this->login1->TabIndex = 1;
@@ -155,7 +169,7 @@ namespace RealEstate {
 			this->panel1->Controls->Add(this->login);
 			this->panel1->Controls->Add(this->password);
 			this->panel1->Controls->Add(this->username);
-			this->panel1->Location = System::Drawing::Point(802, 55);
+			this->panel1->Location = System::Drawing::Point(755, 55);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(185, 195);
 			this->panel1->TabIndex = 3;
@@ -189,44 +203,50 @@ namespace RealEstate {
 			// 
 			this->login->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"login.BackgroundImage")));
 			this->login->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->login->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->login->FlatAppearance->BorderSize = 0;
 			this->login->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->login->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->login->ForeColor = System::Drawing::Color::White;
-			this->login->Location = System::Drawing::Point(21, 131);
+			this->login->ForeColor = System::Drawing::Color::Black;
+			this->login->Location = System::Drawing::Point(-8, 131);
 			this->login->Margin = System::Windows::Forms::Padding(0);
 			this->login->Name = L"login";
-			this->login->Size = System::Drawing::Size(145, 28);
+			this->login->Size = System::Drawing::Size(196, 28);
 			this->login->TabIndex = 2;
 			this->login->Text = L"Log In";
 			this->login->UseVisualStyleBackColor = true;
 			this->login->Click += gcnew System::EventHandler(this, &Main::login_Click_1);
+			this->login->MouseLeave += gcnew System::EventHandler(this, &Main::login_MouseLeave);
+			this->login->MouseHover += gcnew System::EventHandler(this, &Main::login_MouseHover);
 			// 
 			// password
 			// 
 			this->password->AcceptsTab = true;
 			this->password->AllowDrop = true;
 			this->password->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->password->Font = (gcnew System::Drawing::Font(L"Arial Unicode MS", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->password->Location = System::Drawing::Point(20, 88);
+			this->password->Location = System::Drawing::Point(20, 97);
 			this->password->Name = L"password";
-			this->password->Size = System::Drawing::Size(145, 21);
+			this->password->Size = System::Drawing::Size(145, 17);
 			this->password->TabIndex = 1;
 			this->password->UseSystemPasswordChar = true;
+			this->password->Enter += gcnew System::EventHandler(this, &Main::password_Enter);
+			this->password->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Main::password_KeyDown);
 			// 
 			// username
 			// 
 			this->username->AcceptsTab = true;
 			this->username->AllowDrop = true;
 			this->username->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->username->Font = (gcnew System::Drawing::Font(L"Arial Unicode MS", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->username->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->username->Location = System::Drawing::Point(20, 32);
 			this->username->Name = L"username";
-			this->username->Size = System::Drawing::Size(145, 21);
+			this->username->Size = System::Drawing::Size(145, 17);
 			this->username->TabIndex = 0;
+			this->username->Enter += gcnew System::EventHandler(this, &Main::username_Enter);
 			// 
 			// REGISTER
 			// 
@@ -238,7 +258,7 @@ namespace RealEstate {
 			this->REGISTER->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->REGISTER->ForeColor = System::Drawing::Color::White;
-			this->REGISTER->Location = System::Drawing::Point(802, 12);
+			this->REGISTER->Location = System::Drawing::Point(755, 12);
 			this->REGISTER->Name = L"REGISTER";
 			this->REGISTER->Size = System::Drawing::Size(97, 29);
 			this->REGISTER->TabIndex = 4;
@@ -257,7 +277,7 @@ namespace RealEstate {
 			this->buy->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->buy->ForeColor = System::Drawing::Color::Black;
-			this->buy->Location = System::Drawing::Point(138, 255);
+			this->buy->Location = System::Drawing::Point(115, 273);
 			this->buy->Name = L"buy";
 			this->buy->Size = System::Drawing::Size(167, 90);
 			this->buy->TabIndex = 6;
@@ -276,7 +296,7 @@ namespace RealEstate {
 			this->Sell->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Sell->ForeColor = System::Drawing::Color::Black;
-			this->Sell->Location = System::Drawing::Point(342, 255);
+			this->Sell->Location = System::Drawing::Point(319, 273);
 			this->Sell->Name = L"Sell";
 			this->Sell->Size = System::Drawing::Size(167, 90);
 			this->Sell->TabIndex = 7;
@@ -295,7 +315,7 @@ namespace RealEstate {
 			this->rent->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->rent->ForeColor = System::Drawing::Color::Black;
-			this->rent->Location = System::Drawing::Point(548, 255);
+			this->rent->Location = System::Drawing::Point(525, 273);
 			this->rent->Name = L"rent";
 			this->rent->Size = System::Drawing::Size(167, 90);
 			this->rent->TabIndex = 8;
@@ -315,7 +335,7 @@ namespace RealEstate {
 			this->rental->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->rental->ForeColor = System::Drawing::Color::Black;
-			this->rental->Location = System::Drawing::Point(750, 255);
+			this->rental->Location = System::Drawing::Point(727, 273);
 			this->rental->Name = L"rental";
 			this->rental->Size = System::Drawing::Size(167, 90);
 			this->rental->TabIndex = 9;
@@ -332,7 +352,7 @@ namespace RealEstate {
 			this->city->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->city->FormattingEnabled = true;
-			this->city->Location = System::Drawing::Point(463, 381);
+			this->city->Location = System::Drawing::Point(440, 399);
 			this->city->Name = L"city";
 			this->city->Size = System::Drawing::Size(149, 30);
 			this->city->TabIndex = 20;
@@ -347,10 +367,10 @@ namespace RealEstate {
 			this->go->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
 			this->go->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->go->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->go->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->go->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->go->ForeColor = System::Drawing::Color::White;
-			this->go->Location = System::Drawing::Point(502, 434);
+			this->go->Location = System::Drawing::Point(479, 452);
 			this->go->Name = L"go";
 			this->go->Size = System::Drawing::Size(75, 30);
 			this->go->TabIndex = 21;
@@ -358,13 +378,95 @@ namespace RealEstate {
 			this->go->UseVisualStyleBackColor = false;
 			this->go->Click += gcnew System::EventHandler(this, &Main::go_Click);
 			// 
+			// linkLabel1
+			// 
+			this->linkLabel1->ActiveLinkColor = System::Drawing::Color::White;
+			this->linkLabel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->linkLabel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->linkLabel1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->linkLabel1->LinkBehavior = System::Windows::Forms::LinkBehavior::NeverUnderline;
+			this->linkLabel1->LinkColor = System::Drawing::Color::Silver;
+			this->linkLabel1->Location = System::Drawing::Point(825, 12);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(115, 29);
+			this->linkLabel1->TabIndex = 22;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Username";
+			this->linkLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->linkLabel1->Visible = false;
+			this->linkLabel1->VisitedLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Main::linkLabel1_LinkClicked);
+			this->linkLabel1->MouseLeave += gcnew System::EventHandler(this, &Main::linkLabel1_MouseLeave);
+			this->linkLabel1->MouseHover += gcnew System::EventHandler(this, &Main::linkLabel1_MouseHover);
+			// 
+			// logoutpanel
+			// 
+			this->logoutpanel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->logoutpanel->BackColor = System::Drawing::Color::Transparent;
+			this->logoutpanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"logoutpanel.BackgroundImage")));
+			this->logoutpanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->logoutpanel->Controls->Add(this->myaccount);
+			this->logoutpanel->Controls->Add(this->Logout);
+			this->logoutpanel->Location = System::Drawing::Point(784, 52);
+			this->logoutpanel->Name = L"logoutpanel";
+			this->logoutpanel->Size = System::Drawing::Size(158, 118);
+			this->logoutpanel->TabIndex = 5;
+			this->logoutpanel->Visible = false;
+			// 
+			// myaccount
+			// 
+			this->myaccount->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"myaccount.BackgroundImage")));
+			this->myaccount->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->myaccount->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->myaccount->FlatAppearance->BorderSize = 0;
+			this->myaccount->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->myaccount->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->myaccount->ForeColor = System::Drawing::Color::Black;
+			this->myaccount->Location = System::Drawing::Point(-6, 21);
+			this->myaccount->Margin = System::Windows::Forms::Padding(0);
+			this->myaccount->Name = L"myaccount";
+			this->myaccount->Size = System::Drawing::Size(167, 28);
+			this->myaccount->TabIndex = 6;
+			this->myaccount->Text = L"My Account";
+			this->myaccount->UseVisualStyleBackColor = true;
+			this->myaccount->MouseLeave += gcnew System::EventHandler(this, &Main::myaccount_MouseLeave);
+			this->myaccount->MouseHover += gcnew System::EventHandler(this, &Main::myaccount_MouseHover);
+			// 
+			// Logout
+			// 
+			this->Logout->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Logout.BackgroundImage")));
+			this->Logout->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Logout->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Logout->FlatAppearance->BorderSize = 0;
+			this->Logout->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Logout->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Logout->ForeColor = System::Drawing::Color::Black;
+			this->Logout->Location = System::Drawing::Point(-6, 62);
+			this->Logout->Margin = System::Windows::Forms::Padding(0);
+			this->Logout->Name = L"Logout";
+			this->Logout->Size = System::Drawing::Size(167, 28);
+			this->Logout->TabIndex = 5;
+			this->Logout->Text = L"Log Out";
+			this->Logout->UseVisualStyleBackColor = true;
+			this->Logout->Click += gcnew System::EventHandler(this, &Main::Logout_Click);
+			this->Logout->MouseLeave += gcnew System::EventHandler(this, &Main::Logout_MouseLeave);
+			this->Logout->MouseHover += gcnew System::EventHandler(this, &Main::Logout_MouseHover);
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(999, 607);
+			this->ClientSize = System::Drawing::Size(952, 642);
+			this->Controls->Add(this->logoutpanel);
+			this->Controls->Add(this->linkLabel1);
 			this->Controls->Add(this->go);
 			this->Controls->Add(this->city);
 			this->Controls->Add(this->rental);
@@ -375,11 +477,14 @@ namespace RealEstate {
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->login1);
 			this->Controls->Add(this->label1);
+			this->MinimumSize = System::Drawing::Size(900, 670);
 			this->Name = L"Main";
 			this->Text = L"Main";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->logoutpanel->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -390,9 +495,12 @@ private: System::Void REGISTER_Click(System::Object^  sender, System::EventArgs^
 			 f2->ShowDialog();
 		 }
 private: System::Void login_Click(System::Object^  sender, System::EventArgs^  e) {
+			 username->SelectionStart = 0;
+			 username->SelectionLength = username->Text->Length;
 			 if(this->panel1->Visible == false)
 			 {
 				 this->panel1->Visible = true;
+				 username->Focus();
 			 }
 			 else
 			 {
@@ -412,16 +520,83 @@ private: System::Void Main_Load(System::Object^  sender, System::EventArgs^  e)
 private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 if(db.login_verify(username->Text,password->Text)==true)
 			 {
-				 db.user_details=db.get_user_details(username->Text,password->Text);
-				 MessageBox::Show("Welcome, "+db.user_details[3]);
+				 array<String^>^ details=db.get_user_details(username->Text,password->Text);
+				 //MessageBox::Show("Welcome, "+details[3]);
+				 REGISTER->Visible = false;
+				 linkLabel1->Text = details[3];
+				 login1->Visible = false;
+				 panel1->Visible = false;
+				 linkLabel1->Visible = true;
 			 }
 			 else
+			 {
 				 MessageBox::Show("Wrong Details");
+			 }
+			 username->Text = "";                   //reset username text 
+			 password->Text = "";                   //reset password text
 		 }
 private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
 			 sell^ f2 = gcnew sell();
 			 f2->ShowDialog();
+		 }
+private: System::Void password_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void linkLabel1_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 linkLabel1->LinkColor = System::Drawing::Color::White;
+		 }
+private: System::Void linkLabel1_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 linkLabel1->LinkColor = System::Drawing::Color::Silver;
+		 }
+private: System::Void password_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+			 //login if user press enter
+			 if (e->KeyCode == Keys::Enter) {
+				login_Click_1(sender, e);
+			 }
+		 }
+private: System::Void username_Enter(System::Object^  sender, System::EventArgs^  e) {
+			 //Highlight username text when focused
+			 username->SelectionStart = 0;
+			 username->SelectionLength = username->Text->Length;
+		 }
+private: System::Void password_Enter(System::Object^  sender, System::EventArgs^  e) {
+			 //Highlight password text when focused
+			 password->SelectionStart = 0;
+			 password->SelectionLength = password->Text->Length;
+		 }
+private: System::Void Logout_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 Logout->ForeColor = System::Drawing::Color::White;
+		 }
+private: System::Void Logout_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 Logout->ForeColor = System::Drawing::Color::Black;
+		 }
+private: System::Void myaccount_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 myaccount->ForeColor = System::Drawing::Color::White;
+		 }
+private: System::Void myaccount_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 myaccount->ForeColor = System::Drawing::Color::Black;
+		 }
+private: System::Void login_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 login->ForeColor = System::Drawing::Color::Black;
+		 }
+private: System::Void login_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 login->ForeColor = System::Drawing::Color::White;
+		 }
+private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
+			 // Show myaccount and logout panel //
+			 if(logoutpanel->Visible==false)
+			 logoutpanel->Visible = true;
+			 else
+				 logoutpanel->Visible=false;
+		 }
+private: System::Void Logout_Click(System::Object^  sender, System::EventArgs^  e) {
+			 // Write code for logout //
+			 //
+			 linkLabel1->Visible = false;
+			 linkLabel1->Text = "";
+			 REGISTER->Visible = true;
+			 login1->Visible = true;
+			 logoutpanel->Visible = false;
 		 }
 };
 }

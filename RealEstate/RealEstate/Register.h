@@ -327,10 +327,7 @@ private: System::Void Register_Load(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void signup_Click(System::Object^  sender, System::EventArgs^  e) {
 			 if(pass->Text==con_pass->Text)
-			 {
-				 db.user_reg(username->Text,pass->Text,name->Text,email->Text,contact->Text,city->Text);
-				 this->Close();
-			 }
+			 db.user_reg(username->Text,pass->Text,name->Text,email->Text,contact->Text,city->Text);
 			 else
 				MessageBox::Show("Passwords do not match !");
 		 }
