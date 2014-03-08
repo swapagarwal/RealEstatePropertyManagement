@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Database.h";
 namespace RealEstate {
 
 	using namespace System;
@@ -15,6 +15,7 @@ namespace RealEstate {
 	public ref class Buy_form : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ previous;
 		Buy_form(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,18 @@ namespace RealEstate {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		Buy_form(Form^ f)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			previous=f;
+		}
+		array<Int64>^ ids;
+		int pageno,totalpages;
+		array<String^>^ props;
+		array<String^>^ prop_details;
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -496,7 +508,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel5->Controls->Add(this->panel1);
 			this->panel5->Location = System::Drawing::Point(186, 0);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(770, 739);
+			this->panel5->Size = System::Drawing::Size(770, 733);
 			this->panel5->TabIndex = 11;
 			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Buy_form::panel5_Paint);
 			// 
@@ -1790,7 +1802,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel12->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel12->Location = System::Drawing::Point(0, 0);
 			this->panel12->Name = L"panel12";
-			this->panel12->Size = System::Drawing::Size(188, 739);
+			this->panel12->Size = System::Drawing::Size(188, 733);
 			this->panel12->TabIndex = 12;
 			// 
 			// panel15
@@ -2029,12 +2041,14 @@ private: System::Windows::Forms::Label^  label73;
 			this->AutoScrollMinSize = System::Drawing::Size(1, 1);
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::Black;
-			this->ClientSize = System::Drawing::Size(956, 739);
+			this->ClientSize = System::Drawing::Size(956, 733);
 			this->Controls->Add(this->panel12);
 			this->Controls->Add(this->panel5);
 			this->Name = L"Buy_form";
 			this->Text = L"Buy";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &Buy_form::Buy_form_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &Buy_form::Buy_form_Load);
 			this->panel5->ResumeLayout(false);
 			this->panel11->ResumeLayout(false);
 			this->panel11->PerformLayout();
@@ -2077,6 +2091,7 @@ private: System::Windows::Forms::Label^  label73;
 
 		}
 #pragma endregion
+		public : Database db;
 	private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void panel5_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
@@ -2084,6 +2099,157 @@ private: System::Void panel5_Paint(System::Object^  sender, System::Windows::For
 private: System::Void radioButton4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void label62_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^  e) {
+			 props=gcnew array<String^> {
+				"","","0","2147483647","0","2147483647","","","","","","1","2147483647","","","","","",""
+			};
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(16);
+			 //MessageBox::Show(ids[0]);
+			 if(ids[1]!=-1){
+				 //MessageBox::Show(ids[1]);
+				 prop_details=db.get_property_details(ids[1]);
+				 //MessageBox::Show(prop_details[10]);
+				 label1->Text="Address: "+prop_details[1];
+				 label3->Text=prop_details[10]+" BHK";
+				 label4->Text="Area: "+prop_details[3];
+				 label5->Text="Price: "+prop_details[4];
+				 label6->Text="Seller: "+prop_details[9];
+				 pictureBox1->ImageLocation=prop_details[6];
+				 //MessageBox::Show(prop_details[6]);
+			 }
+			 else this->panel1->Hide();
+			 if(ids[2]!=-1){
+				 prop_details=db.get_property_details(ids[2]);
+				 label12->Text="Address: "+prop_details[1];
+				 label10->Text=prop_details[10]+" BHK";
+				 label9->Text="Area: "+prop_details[3];
+				 label8->Text="Price: "+prop_details[4];
+				 label7->Text="Seller: "+prop_details[9];
+				 pictureBox2->ImageLocation=prop_details[6];
+			 }
+			 else this->panel2->Hide();
+			 if(ids[3]!=-1){
+				 prop_details=db.get_property_details(ids[3]);
+				 label18->Text="Address: "+prop_details[1];
+				 label16->Text=prop_details[10]+" BHK";
+				 label15->Text="Area: "+prop_details[3];
+				 label14->Text="Price: "+prop_details[4];
+				 label13->Text="Seller: "+prop_details[9];
+				 pictureBox3->ImageLocation=prop_details[6];
+			 }
+			 else this->panel3->Hide();
+			 if(ids[4]!=-1){
+				 prop_details=db.get_property_details(ids[4]);
+				 label24->Text="Address: "+prop_details[1];
+				 label22->Text=prop_details[10]+" BHK";
+				 label21->Text="Area: "+prop_details[3];
+				 label20->Text="Price: "+prop_details[4];
+				 label19->Text="Seller: "+prop_details[9];
+				 pictureBox4->ImageLocation=prop_details[6];
+			 }
+			 else this->panel4->Hide();
+			 if(ids[5]!=-1){
+				 prop_details=db.get_property_details(ids[5]);
+				 label30->Text="Address: "+prop_details[1];
+				 label28->Text=prop_details[10]+" BHK";
+				 label27->Text="Area: "+prop_details[3];
+				 label26->Text="Price: "+prop_details[4];
+				 label25->Text="Seller: "+prop_details[9];
+				 pictureBox5->ImageLocation=prop_details[6];
+			 }
+			 else this->panel6->Hide();
+			 if(ids[6]!=-1){
+				 prop_details=db.get_property_details(ids[6]);
+				 label36->Text="Address: "+prop_details[1];
+				 label34->Text=prop_details[10]+" BHK";
+				 label33->Text="Area: "+prop_details[3];
+				 label32->Text="Price: "+prop_details[4];
+				 label31->Text="Seller: "+prop_details[9];
+				 pictureBox6->ImageLocation=prop_details[6];
+			 }
+			 else this->panel7->Hide();
+			 if(ids[7]!=-1){
+				 prop_details=db.get_property_details(ids[7]);
+				 label42->Text="Address: "+prop_details[1];
+				 label40->Text=prop_details[10]+" BHK";
+				 label39->Text="Area: "+prop_details[3];
+				 label38->Text="Price: "+prop_details[4];
+				 label37->Text="Seller: "+prop_details[9];
+				 pictureBox7->ImageLocation=prop_details[6];
+			 }
+			 else this->panel8->Hide();
+			 if(ids[8]!=-1){
+				 prop_details=db.get_property_details(ids[8]);
+				 label48->Text="Address: "+prop_details[1];
+				 label46->Text=prop_details[10]+" BHK";
+				 label45->Text="Area: "+prop_details[3];
+				 label44->Text="Price: "+prop_details[4];
+				 label43->Text="Seller: "+prop_details[9];
+				 pictureBox8->ImageLocation=prop_details[6];
+			 }
+			 else this->panel9->Hide();
+			 if(ids[9]!=-1){
+				 prop_details=db.get_property_details(ids[9]);
+				 label54->Text="Address: "+prop_details[1];
+				 label52->Text=prop_details[10]+" BHK";
+				 label51->Text="Area: "+prop_details[3];
+				 label50->Text="Price: "+prop_details[4];
+				 label49->Text="Seller: "+prop_details[9];
+				 pictureBox9->ImageLocation=prop_details[6];
+			 }
+			 else this->panel10->Hide();
+			 if(ids[10]!=-1){
+				 prop_details=db.get_property_details(ids[10]);
+				 label60->Text="Address: "+prop_details[1];
+				 label58->Text=prop_details[10]+" BHK";
+				 label57->Text="Area: "+prop_details[3];
+				 label56->Text="Price: "+prop_details[4];
+				 label55->Text="Seller: "+prop_details[9];
+				 pictureBox10->ImageLocation=prop_details[6];
+			 }
+			 else this->panel11->Hide();
+
+			 /*System::Windows::Forms::Panel^  panel100;
+			 System::Windows::Forms::Label^  label100;
+			 System::Windows::Forms::Label^  label200;
+			 System::Windows::Forms::Label^  label300;
+			 System::Windows::Forms::Label^  label400;
+			 System::Windows::Forms::Label^  label500;
+			 System::Windows::Forms::Label^  label600;
+			 System::Windows::Forms::PictureBox^  pictureBox100;
+			 panel100 = (gcnew System::Windows::Forms::Panel());
+			 label100 = (gcnew System::Windows::Forms::Label());
+			 label200 = (gcnew System::Windows::Forms::Label());
+			 label300 = (gcnew System::Windows::Forms::Label());
+			 label400 = (gcnew System::Windows::Forms::Label());
+			 label500 = (gcnew System::Windows::Forms::Label());
+			 label600 = (gcnew System::Windows::Forms::Label());
+			 pictureBox100 = (gcnew System::Windows::Forms::PictureBox());
+
+			 panel100->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+				 | System::Windows::Forms::AnchorStyles::Right));
+			 panel100->AutoScroll = true;
+			 panel100->BackColor = System::Drawing::Color::White;
+			 panel100->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			 panel100->Controls->Add(contact);
+			 panel100->Controls->Add(label600);
+			 panel100->Controls->Add(label500);
+			 panel100->Controls->Add(label400);
+			 panel100->Controls->Add(label300);
+			 panel100->Controls->Add(label200);
+			 panel100->Controls->Add(label100);
+			 panel100->Controls->Add(details);
+			 panel100->Controls->Add(pictureBox100);
+			 panel100->Location = System::Drawing::Point(35, 20);
+			 panel100->Name = L"panel100";
+			 panel100->Size = System::Drawing::Size(676, 143);
+			 panel100->TabIndex = 13;*/
+		 }
+private: System::Void Buy_form_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+			 previous->Show();
 		 }
 };
 }

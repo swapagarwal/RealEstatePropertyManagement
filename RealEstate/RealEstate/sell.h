@@ -18,6 +18,7 @@ namespace RealEstate {
 		String^ cityname;
 		String^ username;
 		String^ sell_rent;
+		String^ sell_name;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::DateTimePicker^  calendar;
 	private: System::Windows::Forms::PictureBox^  map;
@@ -34,13 +35,14 @@ namespace RealEstate {
 	public: 
 
 		Form^ previous;
-		sell(String^ c, String^ u,String^s, Form^ f)
+		sell(String^ c, String^ u,String^s, Form^ f,String^ n)
 		{
 			InitializeComponent();
 			cityname=c;
 			username=u;
 			sell_rent=s;
 			previous=f;
+			sell_name=n;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -416,7 +418,7 @@ namespace RealEstate {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(1046, 771);
+			this->button1->Location = System::Drawing::Point(1046, 688);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(80, 23);
 			this->button1->TabIndex = 24;
@@ -614,7 +616,7 @@ namespace RealEstate {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1164, 816);
+			this->ClientSize = System::Drawing::Size(1164, 733);
 			this->Controls->Add(this->map_upload);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->map);
@@ -716,7 +718,7 @@ namespace RealEstate {
 					 {
 						 if(rand_1->Text!="" && rand_2->Text!="")
 						 {
-							 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text};
+							 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text,sell_name};
 							 db.properties(details);
 							 this->Close();
 							 previous->Show();
@@ -726,7 +728,7 @@ namespace RealEstate {
 					 }
 					 else if(radioButton5->Checked==true)
 					 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"","Plot",desc->Text,"","",age->Text,calendar->Text};
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Plot",desc->Text,"","",age->Text,calendar->Text,sell_name};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();
@@ -735,7 +737,7 @@ namespace RealEstate {
 					 {
 						 if(rand_1->Text!="")
 						 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text};
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text,sell_name};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();

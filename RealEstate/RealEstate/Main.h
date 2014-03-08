@@ -494,6 +494,7 @@ namespace RealEstate {
 		}
 #pragma endregion
 public : Database db;
+		 array<String^>^ details;
 private: System::Void REGISTER_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Register^ f2 = gcnew Register();
 			 f2->ShowDialog();
@@ -524,7 +525,7 @@ private: System::Void Main_Load(System::Object^  sender, System::EventArgs^  e)
 private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 if(db.login_verify(username->Text,password->Text)==true)
 			 {
-				 array<String^>^ details=db.get_user_details(username->Text,password->Text);
+				 details=db.get_user_details(username->Text,password->Text);
 				 //MessageBox::Show("Welcome, "+details[3]);
 				 REGISTER->Visible = false;
 				 linkLabel1->Text = details[1];
@@ -541,6 +542,14 @@ private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
+			 if(buy->Checked==true)
+			 {
+				 Buy_form^ f3;
+				 
+				 f3=gcnew Buy_form(this);
+				 f3->Show();
+				 this->Hide();
+			 }
 			 if(Sell->Checked==true || rent->Checked==true)
 			 {
 				 if(linkLabel1->Text!="")
@@ -550,9 +559,9 @@ private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e)
 						 sell^ f2;
 						 this->Hide();
 						 if(Sell->Checked==true)
-							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this);
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this,details[3]);
 						 else
-							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this);
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this,details[3]);
 						 f2->Show();
 					 }
 					 else
