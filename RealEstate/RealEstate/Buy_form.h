@@ -1,5 +1,6 @@
 #pragma once
 #include "Database.h";
+#include <math.h>
 namespace RealEstate {
 
 	using namespace System;
@@ -34,7 +35,11 @@ namespace RealEstate {
 		array<Int64>^ ids;
 		int pageno,totalpages;
 		array<String^>^ props;
-		array<String^>^ prop_details;
+
+	public: 
+	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::Button^  button21;
+			 array<String^>^ prop_details;
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -336,6 +341,8 @@ private: System::Windows::Forms::Label^  label73;
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Buy_form::typeid));
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
 			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->label55 = (gcnew System::Windows::Forms::Label());
@@ -511,6 +518,24 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel5->Size = System::Drawing::Size(770, 733);
 			this->panel5->TabIndex = 11;
 			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Buy_form::panel5_Paint);
+			// 
+			// button21
+			// 
+			this->button21->Location = System::Drawing::Point(56, 680);
+			this->button21->Name = L"button21";
+			this->button21->Size = System::Drawing::Size(75, 23);
+			this->button21->TabIndex = 24;
+			this->button21->Text = L"Go to Page";
+			this->button21->UseVisualStyleBackColor = true;
+			this->button21->Click += gcnew System::EventHandler(this, &Buy_form::button21_Click);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(31, 653);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 23;
 			// 
 			// panel11
 			// 
@@ -1796,7 +1821,9 @@ private: System::Windows::Forms::Label^  label73;
 			// 
 			this->panel12->BackColor = System::Drawing::Color::White;
 			this->panel12->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel12->Controls->Add(this->button21);
 			this->panel12->Controls->Add(this->panel15);
+			this->panel12->Controls->Add(this->comboBox1);
 			this->panel12->Controls->Add(this->panel14);
 			this->panel12->Controls->Add(this->panel13);
 			this->panel12->Dock = System::Windows::Forms::DockStyle::Left;
@@ -2108,6 +2135,16 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 ids=db.search(props);
 			 prop_details=gcnew array<String^>(16);
 			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/10.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
 			 if(ids[1]!=-1){
 				 //MessageBox::Show(ids[1]);
 				 prop_details=db.get_property_details(ids[1]);
@@ -2250,6 +2287,126 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void Buy_form_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 			 previous->Show();
+		 }
+private: System::Void label69_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button21_Click(System::Object^  sender, System::EventArgs^  e) {
+			 pageno=Convert::ToInt32(comboBox1->Text);
+			 //MessageBox::Show(Convert::ToString(pageno));
+
+			 if(ids[1+10*(pageno-1)]!=-1){
+				 //MessageBox::Show(ids[1]);
+				 prop_details=db.get_property_details(ids[1+10*(pageno-1)]);
+				 //MessageBox::Show(prop_details[10]);
+				 label1->Text="Address: "+prop_details[1];
+				 label3->Text=prop_details[10]+" BHK";
+				 label4->Text="Area: "+prop_details[3];
+				 label5->Text="Price: "+prop_details[4];
+				 label6->Text="Seller: "+prop_details[9];
+				 pictureBox1->ImageLocation=prop_details[6];
+				 //MessageBox::Show(prop_details[6]);
+				 panel1->Show();
+			 }
+			 else this->panel1->Hide();
+			 if(ids[2+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[2+10*(pageno-1)]);
+				 label12->Text="Address: "+prop_details[1];
+				 label10->Text=prop_details[10]+" BHK";
+				 label9->Text="Area: "+prop_details[3];
+				 label8->Text="Price: "+prop_details[4];
+				 label7->Text="Seller: "+prop_details[9];
+				 pictureBox2->ImageLocation=prop_details[6];
+				 panel2->Show();
+			 }
+			 else this->panel2->Hide();
+			 if(ids[3+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[3+10*(pageno-1)]);
+				 label18->Text="Address: "+prop_details[1];
+				 label16->Text=prop_details[10]+" BHK";
+				 label15->Text="Area: "+prop_details[3];
+				 label14->Text="Price: "+prop_details[4];
+				 label13->Text="Seller: "+prop_details[9];
+				 pictureBox3->ImageLocation=prop_details[6];
+				 panel3->Show();
+			 }
+			 else this->panel3->Hide();
+			 if(ids[4+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[4+10*(pageno-1)]);
+				 label24->Text="Address: "+prop_details[1];
+				 label22->Text=prop_details[10]+" BHK";
+				 label21->Text="Area: "+prop_details[3];
+				 label20->Text="Price: "+prop_details[4];
+				 label19->Text="Seller: "+prop_details[9];
+				 pictureBox4->ImageLocation=prop_details[6];
+				 panel4->Show();
+			 }
+			 else this->panel4->Hide();
+			 if(ids[5+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[5+10*(pageno-1)]);
+				 label30->Text="Address: "+prop_details[1];
+				 label28->Text=prop_details[10]+" BHK";
+				 label27->Text="Area: "+prop_details[3];
+				 label26->Text="Price: "+prop_details[4];
+				 label25->Text="Seller: "+prop_details[9];
+				 pictureBox5->ImageLocation=prop_details[6];
+				 panel6->Show();
+			 }
+			 else this->panel6->Hide();
+			 if(ids[6+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[6+10*(pageno-1)]);
+				 label36->Text="Address: "+prop_details[1];
+				 label34->Text=prop_details[10]+" BHK";
+				 label33->Text="Area: "+prop_details[3];
+				 label32->Text="Price: "+prop_details[4];
+				 label31->Text="Seller: "+prop_details[9];
+				 pictureBox6->ImageLocation=prop_details[6];
+				 panel7->Show();
+			 }
+			 else this->panel7->Hide();
+			 if(ids[7+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[7+10*(pageno-1)]);
+				 label42->Text="Address: "+prop_details[1];
+				 label40->Text=prop_details[10]+" BHK";
+				 label39->Text="Area: "+prop_details[3];
+				 label38->Text="Price: "+prop_details[4];
+				 label37->Text="Seller: "+prop_details[9];
+				 pictureBox7->ImageLocation=prop_details[6];
+				 panel8->Show();
+			 }
+			 else this->panel8->Hide();
+			 if(ids[8+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[8+10*(pageno-1)]);
+				 label48->Text="Address: "+prop_details[1];
+				 label46->Text=prop_details[10]+" BHK";
+				 label45->Text="Area: "+prop_details[3];
+				 label44->Text="Price: "+prop_details[4];
+				 label43->Text="Seller: "+prop_details[9];
+				 pictureBox8->ImageLocation=prop_details[6];
+				 panel9->Show();
+			 }
+			 else this->panel9->Hide();
+			 if(ids[9+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[9+10*(pageno-1)]);
+				 label54->Text="Address: "+prop_details[1];
+				 label52->Text=prop_details[10]+" BHK";
+				 label51->Text="Area: "+prop_details[3];
+				 label50->Text="Price: "+prop_details[4];
+				 label49->Text="Seller: "+prop_details[9];
+				 pictureBox9->ImageLocation=prop_details[6];
+				 panel10->Show();
+			 }
+			 else this->panel10->Hide();
+			 if(ids[10+10*(pageno-1)]!=-1){
+				 prop_details=db.get_property_details(ids[10+10*(pageno-1)]);
+				 label60->Text="Address: "+prop_details[1];
+				 label58->Text=prop_details[10]+" BHK";
+				 label57->Text="Area: "+prop_details[3];
+				 label56->Text="Price: "+prop_details[4];
+				 label55->Text="Seller: "+prop_details[9];
+				 pictureBox10->ImageLocation=prop_details[6];
+				 panel11->Show();
+			 }
+			 else this->panel11->Hide();
 		 }
 };
 }

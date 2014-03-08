@@ -360,6 +360,7 @@ namespace RealEstate {
 			this->city->Size = System::Drawing::Size(149, 30);
 			this->city->TabIndex = 20;
 			this->city->Text = L"City";
+			this->city->SelectedIndexChanged += gcnew System::EventHandler(this, &Main::city_SelectedIndexChanged);
 			this->city->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &Main::city_MouseClick_1);
 			// 
 			// go
@@ -636,6 +637,8 @@ private: System::Void myaccount_Click(System::Object^  sender, System::EventArgs
 		 }
 private: System::Void city_MouseClick_1(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
 		 city->Text = "";
+		 }
+private: System::Void city_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
