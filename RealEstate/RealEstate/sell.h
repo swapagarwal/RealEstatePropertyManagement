@@ -641,8 +641,17 @@ namespace RealEstate {
 				 openFileDialog1->ShowDialog();
 				 image_location=openFileDialog1->FileName;
 				 image->ImageLocation=image_location;
+				 int temp=image_location->Length;
+				 for(int i=0;i<temp;i++)
+				 {
+					 if(image_location[i]=='\\')
+					 {
+						 image_location=image_location->Insert(i,"\\\\");
+						 i=i+2;
+					 }
+				 }
+				 MessageBox::Show(image_location);
 			 }
-
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
 				 try{
