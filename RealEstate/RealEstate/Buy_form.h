@@ -17,20 +17,15 @@ namespace RealEstate {
 	{
 	public:
 		Form^ previous;
-		Buy_form(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-		Buy_form(Form^ f)
+		String^ cityname;
+		Buy_form(String^ c,Form^ f)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 			previous=f;
+			cityname=c;
 		}
 		array<Int64>^ ids;
 		int pageno,totalpages;
@@ -2162,11 +2157,11 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				"","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 			};
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
-			 prop_details=gcnew array<String^>(16);
+			 prop_details=gcnew array<String^>(18);
 			 //MessageBox::Show(ids[0]);
 			 totalpages=ceil(ids[0]/10.0);
 			 pageno=1;
@@ -2240,7 +2235,7 @@ private: System::Void button19_Click(System::Object^  sender, System::EventArgs^
 			 else
 			 {
 				 props=gcnew array<String^> {
-					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+					 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 				 };
 				 ids=gcnew array<Int64>(1000);
 				 ids=db.search(props);
@@ -2274,7 +2269,7 @@ private: System::Void button20_Click(System::Object^  sender, System::EventArgs^
 			 else
 			 {
 				 props=gcnew array<String^> {
-					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+					 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 				 };
 				 ids=gcnew array<Int64>(1000);
 				 ids=db.search(props);
@@ -2303,7 +2298,7 @@ private: System::Void display(int pageno) {
 				 label3->Text=prop_details[10]+" BHK";
 				 label4->Text="Area: "+prop_details[3];
 				 label5->Text="Price: "+prop_details[4];
-				 label6->Text="Seller: "+prop_details[9];
+				 label6->Text="Seller: "+prop_details[17];
 				 pictureBox1->ImageLocation=prop_details[6];
 				 //MessageBox::Show(prop_details[6]);
 				 panel1->Show();
@@ -2315,7 +2310,7 @@ private: System::Void display(int pageno) {
 				 label10->Text=prop_details[10]+" BHK";
 				 label9->Text="Area: "+prop_details[3];
 				 label8->Text="Price: "+prop_details[4];
-				 label7->Text="Seller: "+prop_details[9];
+				 label7->Text="Seller: "+prop_details[17];
 				 pictureBox2->ImageLocation=prop_details[6];
 				 panel2->Show();
 			 }
@@ -2326,7 +2321,7 @@ private: System::Void display(int pageno) {
 				 label16->Text=prop_details[10]+" BHK";
 				 label15->Text="Area: "+prop_details[3];
 				 label14->Text="Price: "+prop_details[4];
-				 label13->Text="Seller: "+prop_details[9];
+				 label13->Text="Seller: "+prop_details[17];
 				 pictureBox3->ImageLocation=prop_details[6];
 				 panel3->Show();
 			 }
@@ -2337,7 +2332,7 @@ private: System::Void display(int pageno) {
 				 label22->Text=prop_details[10]+" BHK";
 				 label21->Text="Area: "+prop_details[3];
 				 label20->Text="Price: "+prop_details[4];
-				 label19->Text="Seller: "+prop_details[9];
+				 label19->Text="Seller: "+prop_details[17];
 				 pictureBox4->ImageLocation=prop_details[6];
 				 panel4->Show();
 			 }
@@ -2348,7 +2343,7 @@ private: System::Void display(int pageno) {
 				 label28->Text=prop_details[10]+" BHK";
 				 label27->Text="Area: "+prop_details[3];
 				 label26->Text="Price: "+prop_details[4];
-				 label25->Text="Seller: "+prop_details[9];
+				 label25->Text="Seller: "+prop_details[17];
 				 pictureBox5->ImageLocation=prop_details[6];
 				 panel6->Show();
 			 }
@@ -2359,7 +2354,7 @@ private: System::Void display(int pageno) {
 				 label34->Text=prop_details[10]+" BHK";
 				 label33->Text="Area: "+prop_details[3];
 				 label32->Text="Price: "+prop_details[4];
-				 label31->Text="Seller: "+prop_details[9];
+				 label31->Text="Seller: "+prop_details[17];
 				 pictureBox6->ImageLocation=prop_details[6];
 				 panel7->Show();
 			 }
@@ -2370,7 +2365,7 @@ private: System::Void display(int pageno) {
 				 label40->Text=prop_details[10]+" BHK";
 				 label39->Text="Area: "+prop_details[3];
 				 label38->Text="Price: "+prop_details[4];
-				 label37->Text="Seller: "+prop_details[9];
+				 label37->Text="Seller: "+prop_details[17];
 				 pictureBox7->ImageLocation=prop_details[6];
 				 panel8->Show();
 			 }
@@ -2381,7 +2376,7 @@ private: System::Void display(int pageno) {
 				 label46->Text=prop_details[10]+" BHK";
 				 label45->Text="Area: "+prop_details[3];
 				 label44->Text="Price: "+prop_details[4];
-				 label43->Text="Seller: "+prop_details[9];
+				 label43->Text="Seller: "+prop_details[17];
 				 pictureBox8->ImageLocation=prop_details[6];
 				 panel9->Show();
 			 }
@@ -2392,7 +2387,7 @@ private: System::Void display(int pageno) {
 				 label52->Text=prop_details[10]+" BHK";
 				 label51->Text="Area: "+prop_details[3];
 				 label50->Text="Price: "+prop_details[4];
-				 label49->Text="Seller: "+prop_details[9];
+				 label49->Text="Seller: "+prop_details[17];
 				 pictureBox9->ImageLocation=prop_details[6];
 				 panel10->Show();
 			 }
@@ -2403,7 +2398,7 @@ private: System::Void display(int pageno) {
 				 label58->Text=prop_details[10]+" BHK";
 				 label57->Text="Area: "+prop_details[3];
 				 label56->Text="Price: "+prop_details[4];
-				 label55->Text="Seller: "+prop_details[9];
+				 label55->Text="Seller: "+prop_details[17];
 				 pictureBox10->ImageLocation=prop_details[6];
 				 panel11->Show();
 			 }
@@ -2432,7 +2427,7 @@ private: System::Void filter_by_bhk() {
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+				 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -2442,6 +2437,7 @@ private: System::Void filter_by_bhk() {
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);

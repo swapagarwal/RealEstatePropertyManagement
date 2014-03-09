@@ -545,11 +545,15 @@ private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e)
 		 {
 			 if(buy->Checked==true)
 			 {
-				 Buy_form^ f3;
-				 
-				 f3=gcnew Buy_form(this);
-				 f3->Show();
-				 this->Hide();
+				 if(city->Text!="" && city->Text!="City")
+				 {
+					 Buy_form^ f3;
+					 f3 = gcnew Buy_form(city->Text,this);
+					 f3->Show();
+					 this->Hide();
+				 }
+				 else
+					 MessageBox::Show("Enter your city first.");
 			 }
 			 if(Sell->Checked==true || rent->Checked==true)
 			 {
@@ -558,12 +562,12 @@ private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e)
 					 if(city->Text!="" && city->Text!="City")
 					 {
 						 sell^ f2;
-						 this->Hide();
 						 if(Sell->Checked==true)
 							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this,details[3]);
 						 else
 							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this,details[3]);
 						 f2->Show();
+						 this->Hide();
 					 }
 					 else
 						 MessageBox::Show("Enter your city first.");

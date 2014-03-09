@@ -231,13 +231,13 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 String^ s="Select * From repm.properties where id='"+id+"';";
 		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
 		 MySqlDataReader^ mydata;
-		 array<String^>^ details=gcnew array<String^>(16);
+		 array<String^>^ details=gcnew array<String^>(18);
 		 try
 		 {
 			 cmd->Connection->Open();
 			 mydata=cmd->ExecuteReader();
 			 mydata->Read();
-			 for(int i=0;i<16;i++)
+			 for(int i=0;i<18;i++)
 				 details[i]=mydata->GetString(i);
 		 }
 		 catch(Exception^ ex)
