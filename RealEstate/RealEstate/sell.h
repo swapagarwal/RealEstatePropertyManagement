@@ -20,6 +20,9 @@ namespace RealEstate {
 		String^ sell_rent;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::DateTimePicker^  calendar;
+	private: System::Windows::Forms::PictureBox^  map;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  map_upload;
 
 	public: 
 
@@ -147,9 +150,13 @@ namespace RealEstate {
 			this->floor_upload = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->calendar = (gcnew System::Windows::Forms::DateTimePicker());
+			this->map = (gcnew System::Windows::Forms::PictureBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->map_upload = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->image))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->floor_plan))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->map))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label3
@@ -255,9 +262,9 @@ namespace RealEstate {
 			this->label5->ForeColor = System::Drawing::Color::Snow;
 			this->label5->Location = System::Drawing::Point(83, 225);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(33, 19);
+			this->label5->Size = System::Drawing::Size(82, 19);
 			this->label5->TabIndex = 11;
-			this->label5->Text = L"Age";
+			this->label5->Text = L"Age (years)";
 			// 
 			// age
 			// 
@@ -280,9 +287,9 @@ namespace RealEstate {
 			this->label6->ForeColor = System::Drawing::Color::Snow;
 			this->label6->Location = System::Drawing::Point(83, 261);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(39, 19);
+			this->label6->Size = System::Drawing::Size(87, 19);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"Area";
+			this->label6->Text = L"Area (sq ft)";
 			// 
 			// area
 			// 
@@ -305,9 +312,9 @@ namespace RealEstate {
 			this->label7->ForeColor = System::Drawing::Color::Snow;
 			this->label7->Location = System::Drawing::Point(82, 297);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(40, 19);
+			this->label7->Size = System::Drawing::Size(100, 19);
 			this->label7->TabIndex = 15;
-			this->label7->Text = L"Price";
+			this->label7->Text = L"Price (in Lacs)";
 			// 
 			// price
 			// 
@@ -404,12 +411,12 @@ namespace RealEstate {
 			// 
 			// button1
 			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->button1->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(702, 515);
+			this->button1->Location = System::Drawing::Point(1046, 771);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(80, 23);
 			this->button1->TabIndex = 24;
@@ -459,7 +466,7 @@ namespace RealEstate {
 			this->label12->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::Snow;
-			this->label12->Location = System::Drawing::Point(615, 62);
+			this->label12->Location = System::Drawing::Point(959, 62);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(47, 19);
 			this->label12->TabIndex = 27;
@@ -469,7 +476,7 @@ namespace RealEstate {
 			// 
 			this->image->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->image->BackColor = System::Drawing::SystemColors::Info;
-			this->image->Location = System::Drawing::Point(619, 90);
+			this->image->Location = System::Drawing::Point(963, 90);
 			this->image->MaximumSize = System::Drawing::Size(163, 99);
 			this->image->MinimumSize = System::Drawing::Size(163, 99);
 			this->image->Name = L"image";
@@ -485,7 +492,7 @@ namespace RealEstate {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Black;
-			this->button2->Location = System::Drawing::Point(702, 200);
+			this->button2->Location = System::Drawing::Point(1046, 200);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(80, 23);
 			this->button2->TabIndex = 29;
@@ -497,7 +504,7 @@ namespace RealEstate {
 			// 
 			this->floor_plan->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->floor_plan->BackColor = System::Drawing::SystemColors::Info;
-			this->floor_plan->Location = System::Drawing::Point(619, 268);
+			this->floor_plan->Location = System::Drawing::Point(963, 268);
 			this->floor_plan->MaximumSize = System::Drawing::Size(163, 99);
 			this->floor_plan->MinimumSize = System::Drawing::Size(163, 99);
 			this->floor_plan->Name = L"floor_plan";
@@ -515,7 +522,7 @@ namespace RealEstate {
 			this->label13->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::Snow;
-			this->label13->Location = System::Drawing::Point(615, 235);
+			this->label13->Location = System::Drawing::Point(959, 235);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(72, 19);
 			this->label13->TabIndex = 31;
@@ -528,7 +535,7 @@ namespace RealEstate {
 			this->floor_upload->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->floor_upload->ForeColor = System::Drawing::Color::Black;
-			this->floor_upload->Location = System::Drawing::Point(702, 396);
+			this->floor_upload->Location = System::Drawing::Point(1046, 396);
 			this->floor_upload->Name = L"floor_upload";
 			this->floor_upload->Size = System::Drawing::Size(80, 23);
 			this->floor_upload->TabIndex = 32;
@@ -558,13 +565,59 @@ namespace RealEstate {
 			this->calendar->Size = System::Drawing::Size(200, 20);
 			this->calendar->TabIndex = 34;
 			// 
+			// map
+			// 
+			this->map->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->map->BackColor = System::Drawing::SystemColors::Info;
+			this->map->Location = System::Drawing::Point(958, 491);
+			this->map->MaximumSize = System::Drawing::Size(163, 99);
+			this->map->MinimumSize = System::Drawing::Size(163, 99);
+			this->map->Name = L"map";
+			this->map->Size = System::Drawing::Size(163, 99);
+			this->map->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->map->TabIndex = 35;
+			this->map->TabStop = false;
+			this->map->WaitOnLoad = true;
+			// 
+			// label2
+			// 
+			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::Snow;
+			this->label2->Location = System::Drawing::Point(959, 450);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(34, 19);
+			this->label2->TabIndex = 36;
+			this->label2->Text = L"Map";
+			// 
+			// map_upload
+			// 
+			this->map_upload->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->map_upload->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->map_upload->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->map_upload->ForeColor = System::Drawing::Color::Black;
+			this->map_upload->Location = System::Drawing::Point(1041, 621);
+			this->map_upload->Name = L"map_upload";
+			this->map_upload->Size = System::Drawing::Size(80, 23);
+			this->map_upload->TabIndex = 37;
+			this->map_upload->Text = L"Upload";
+			this->map_upload->UseVisualStyleBackColor = false;
+			this->map_upload->Click += gcnew System::EventHandler(this, &sell::map_upload_Click);
+			// 
 			// sell
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(820, 559);
+			this->ClientSize = System::Drawing::Size(1164, 816);
+			this->Controls->Add(this->map_upload);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->map);
 			this->Controls->Add(this->calendar);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->floor_upload);
@@ -596,10 +649,12 @@ namespace RealEstate {
 			this->Text = L"sell";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &sell::sell_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &sell::sell_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->image))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->floor_plan))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->map))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -607,6 +662,7 @@ namespace RealEstate {
 #pragma endregion
 		String^ image_location;
 		String^ floor_plan_location;
+		String^ map_location;
 		Database	db;
 
 	private: System::Void radioButton4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -650,31 +706,42 @@ namespace RealEstate {
 						 i=i+2;
 					 }
 				 }
-				 MessageBox::Show(image_location);
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				 try{
+				 if(address->Text!="" && contact->Text!="" && age->Text!="" && area->Text!="" && price->Text!="" && desc->Text!="" && image_location!="" && map_location!="" && floor_plan_location!="")
+				 {
+					 try{
 					 if(radioButton4->Checked==true)
 					 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,"",username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text};
-						 db.properties(details);
-						 this->Close();
-						 previous->Show();
+						 if(rand_1->Text!="" && rand_2->Text!="")
+						 {
+							 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text};
+							 db.properties(details);
+							 this->Close();
+							 previous->Show();
+						 }
+						 else
+							 MessageBox::Show("All entries must be filled first");
 					 }
 					 else if(radioButton5->Checked==true)
 					 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,"",username,"","Plot",desc->Text,"","",age->Text,calendar->Text};
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"","Plot",desc->Text,"","",age->Text,calendar->Text};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();
 					 }
 					 else if(radioButton3->Checked==true)
 					 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,"",username,"","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text};
+						 if(rand_1->Text!="")
+						 {
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();
+						 }
+						 else
+							 MessageBox::Show("All entries must be filled first");
 					 }
 					 else
 					 {
@@ -685,6 +752,9 @@ namespace RealEstate {
 				 {
 					 MessageBox::Show(ex->Message);
 				 }
+				}
+				 else
+					 MessageBox::Show("All entries must be filled first.");
 			 }
 	private: System::Void floor_upload_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
@@ -693,11 +763,42 @@ namespace RealEstate {
 				 openFileDialog1->ShowDialog();
 				 floor_plan_location=openFileDialog1->FileName;
 				 floor_plan->ImageLocation=floor_plan_location;
+				 int temp=floor_plan_location->Length;
+				 for(int i=0;i<temp;i++)
+				 {
+					 if(floor_plan_location[i]=='\\')
+					 {
+						 floor_plan_location=floor_plan_location->Insert(i,"\\\\");
+						 i=i+2;
+					 }
+				 }
 			 }
 	private: System::Void sell_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) 
 			 {
 				 previous->Show();
 			 }
-	};
+	private: System::Void map_upload_Click(System::Object^  sender, System::EventArgs^  e) 
+			 {
+				 OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog();
+				 openFileDialog1->InitialDirectory = "c:\\" ;
+				 openFileDialog1->ShowDialog();
+				 map_location=openFileDialog1->FileName;
+				 map->ImageLocation=map_location;
+				 int temp=map_location->Length;
+				 for(int i=0;i<temp;i++)
+				 {
+					 if(map_location[i]=='\\')
+					 {
+						 map_location=map_location->Insert(i,"\\\\");
+						 i=i+2;
+					 }
+				 }
+			 }
+private: System::Void sell_Load(System::Object^  sender, System::EventArgs^  e) {
+			 image_location="";
+			 floor_plan_location="";
+			 map_location="";
+		 }
+};
 }
 
