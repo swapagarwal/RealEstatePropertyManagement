@@ -265,3 +265,21 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 }
 
 	 }
+
+	 void Database::delete_by_id(int id)
+	 {
+		 String^ s="Delete From repm.properties where id='"+id+"';";
+		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
+		 MySqlDataReader^ mydata;
+		 try
+		 {
+			 cmd->Connection->Open();
+			 mydata=cmd->ExecuteReader();
+		 }
+		 catch(Exception^ ex)
+		 {
+			 cmd->Connection->Close();
+			 MessageBox::Show(ex->Message);
+		 }
+		 cmd->Connection->Close();
+	 }

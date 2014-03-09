@@ -391,7 +391,7 @@ namespace RealEstate {
 			this->panel7->Controls->Add(this->pictureBox5);
 			this->panel7->Location = System::Drawing::Point(97, 761);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(620, 143);
+			this->panel7->Size = System::Drawing::Size(603, 143);
 			this->panel7->TabIndex = 16;
 			// 
 			// label46
@@ -413,12 +413,13 @@ namespace RealEstate {
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(461, 72);
+			this->button9->Location = System::Drawing::Point(444, 72);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(136, 29);
 			this->button9->TabIndex = 8;
-			this->button9->Text = L"Contact Dealer";
+			this->button9->Text = L"Delete";
 			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &profile::button9_Click);
 			// 
 			// label36
 			// 
@@ -494,7 +495,7 @@ namespace RealEstate {
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(461, 25);
+			this->button10->Location = System::Drawing::Point(444, 25);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(136, 29);
 			this->button10->TabIndex = 1;
@@ -532,7 +533,7 @@ namespace RealEstate {
 			this->panel6->Controls->Add(this->pictureBox4);
 			this->panel6->Location = System::Drawing::Point(97, 584);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(620, 143);
+			this->panel6->Size = System::Drawing::Size(603, 143);
 			this->panel6->TabIndex = 15;
 			// 
 			// label45
@@ -554,12 +555,13 @@ namespace RealEstate {
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(461, 72);
+			this->button7->Location = System::Drawing::Point(444, 72);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(136, 29);
 			this->button7->TabIndex = 8;
-			this->button7->Text = L"Contact Dealer";
+			this->button7->Text = L"Delete";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &profile::button7_Click);
 			// 
 			// label30
 			// 
@@ -635,7 +637,7 @@ namespace RealEstate {
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(461, 25);
+			this->button8->Location = System::Drawing::Point(444, 25);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(136, 29);
 			this->button8->TabIndex = 1;
@@ -673,7 +675,7 @@ namespace RealEstate {
 			this->panel5->Controls->Add(this->pictureBox3);
 			this->panel5->Location = System::Drawing::Point(97, 403);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(620, 143);
+			this->panel5->Size = System::Drawing::Size(603, 143);
 			this->panel5->TabIndex = 15;
 			// 
 			// label44
@@ -695,12 +697,13 @@ namespace RealEstate {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(461, 72);
+			this->button5->Location = System::Drawing::Point(444, 72);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(136, 29);
 			this->button5->TabIndex = 8;
-			this->button5->Text = L"Contact Dealer";
+			this->button5->Text = L"Delete";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &profile::button5_Click);
 			// 
 			// label24
 			// 
@@ -776,7 +779,7 @@ namespace RealEstate {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(461, 25);
+			this->button6->Location = System::Drawing::Point(444, 25);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(136, 29);
 			this->button6->TabIndex = 1;
@@ -814,7 +817,7 @@ namespace RealEstate {
 			this->panel4->Controls->Add(this->pictureBox2);
 			this->panel4->Location = System::Drawing::Point(97, 222);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(620, 143);
+			this->panel4->Size = System::Drawing::Size(603, 143);
 			this->panel4->TabIndex = 15;
 			// 
 			// label43
@@ -836,12 +839,13 @@ namespace RealEstate {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(461, 72);
+			this->button3->Location = System::Drawing::Point(444, 72);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(136, 29);
 			this->button3->TabIndex = 8;
-			this->button3->Text = L"Contact Dealer";
+			this->button3->Text = L"Delete";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &profile::button3_Click);
 			// 
 			// label18
 			// 
@@ -917,7 +921,7 @@ namespace RealEstate {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(461, 25);
+			this->button4->Location = System::Drawing::Point(444, 25);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(136, 29);
 			this->button4->TabIndex = 1;
@@ -955,7 +959,7 @@ namespace RealEstate {
 			this->panel3->Controls->Add(this->pictureBox1);
 			this->panel3->Location = System::Drawing::Point(97, 56);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(620, 143);
+			this->panel3->Size = System::Drawing::Size(603, 143);
 			this->panel3->TabIndex = 14;
 			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &profile::panel3_Paint);
 			// 
@@ -978,12 +982,13 @@ namespace RealEstate {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(461, 72);
+			this->button2->Location = System::Drawing::Point(444, 72);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(136, 29);
 			this->button2->TabIndex = 8;
-			this->button2->Text = L"Contact Dealer";
+			this->button2->Text = L"Delete";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &profile::button2_Click);
 			// 
 			// label12
 			// 
@@ -1059,7 +1064,7 @@ namespace RealEstate {
 			this->view_detail->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->view_detail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->view_detail->Location = System::Drawing::Point(461, 25);
+			this->view_detail->Location = System::Drawing::Point(444, 25);
 			this->view_detail->Name = L"view_detail";
 			this->view_detail->Size = System::Drawing::Size(136, 29);
 			this->view_detail->TabIndex = 1;
@@ -1704,6 +1709,116 @@ private: System::Void button10_Click(System::Object^  sender, System::EventArgs^
 			 view_details^ v;
 			 v = gcnew view_details(prop_details);
 			 v->Show();
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 db.delete_by_id(ids[1+5*(pageno-1)]);
+
+			 props=gcnew array<String^> {
+				 "","","","","","","","","","",details[1],"","","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(18);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/5.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 db.delete_by_id(ids[2+5*(pageno-1)]);
+
+			 props=gcnew array<String^> {
+				 "","","","","","","","","","",details[1],"","","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(18);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/5.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
+		 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+			 db.delete_by_id(ids[3+5*(pageno-1)]);
+
+			 props=gcnew array<String^> {
+				 "","","","","","","","","","",details[1],"","","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(18);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/5.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
+		 }
+private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+			 db.delete_by_id(ids[4+5*(pageno-1)]);
+
+			 props=gcnew array<String^> {
+				 "","","","","","","","","","",details[1],"","","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(18);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/5.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
+		 }
+private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
+			 db.delete_by_id(ids[5+5*(pageno-1)]);
+
+			 props=gcnew array<String^> {
+				 "","","","","","","","","","",details[1],"","","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(18);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/5.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
 		 }
 };
 }

@@ -28,5 +28,7 @@ public:
 	 array<String^>^ get_property_details(int id); 
 
 	 void update_property_details(array<String^>^ details);
+
+	 void delete_by_id(int id);
 };
 
