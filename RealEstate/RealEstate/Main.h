@@ -4,6 +4,8 @@
 #include "sell.h"
 #include "Buy_form.h"
 #include "Database.h"
+#include "profile.h"
+
 namespace RealEstate {
 
 	using namespace System;
@@ -431,9 +433,10 @@ namespace RealEstate {
 			this->myaccount->Margin = System::Windows::Forms::Padding(0);
 			this->myaccount->Name = L"myaccount";
 			this->myaccount->Size = System::Drawing::Size(167, 28);
-			this->myaccount->TabIndex = 6;
+			this->myaccount->TabIndex = 5;
 			this->myaccount->Text = L"My Account";
 			this->myaccount->UseVisualStyleBackColor = true;
+			this->myaccount->Click += gcnew System::EventHandler(this, &Main::myaccount_Click);
 			this->myaccount->MouseLeave += gcnew System::EventHandler(this, &Main::myaccount_MouseLeave);
 			this->myaccount->MouseHover += gcnew System::EventHandler(this, &Main::myaccount_MouseHover);
 			// 
@@ -451,7 +454,7 @@ namespace RealEstate {
 			this->Logout->Margin = System::Windows::Forms::Padding(0);
 			this->Logout->Name = L"Logout";
 			this->Logout->Size = System::Drawing::Size(167, 28);
-			this->Logout->TabIndex = 5;
+			this->Logout->TabIndex = 6;
 			this->Logout->Text = L"Log Out";
 			this->Logout->UseVisualStyleBackColor = true;
 			this->Logout->Click += gcnew System::EventHandler(this, &Main::Logout_Click);
@@ -598,6 +601,10 @@ private: System::Void Logout_Click(System::Object^  sender, System::EventArgs^  
 			 login1->Visible = true;
 			 logoutpanel->Visible = false;
 		 }
+private: System::Void myaccount_Click(System::Object^  sender, System::EventArgs^  e) {
+			 logoutpanel->Visible = false;
+			 profile^ f3 = gcnew profile();
+			 f3->ShowDialog();
+		 }
 };
 }
-

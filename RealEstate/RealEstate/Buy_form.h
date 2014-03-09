@@ -425,29 +425,29 @@ private: System::Windows::Forms::Label^  label73;
 			this->details = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel12 = (gcnew System::Windows::Forms::Panel());
-			this->panel13 = (gcnew System::Windows::Forms::Panel());
-			this->label61 = (gcnew System::Windows::Forms::Label());
-			this->label62 = (gcnew System::Windows::Forms::Label());
-			this->label63 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button19 = (gcnew System::Windows::Forms::Button());
+			this->panel15 = (gcnew System::Windows::Forms::Panel());
+			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->label73 = (gcnew System::Windows::Forms::Label());
 			this->panel14 = (gcnew System::Windows::Forms::Panel());
+			this->label68 = (gcnew System::Windows::Forms::Label());
+			this->label67 = (gcnew System::Windows::Forms::Label());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label64 = (gcnew System::Windows::Forms::Label());
 			this->label65 = (gcnew System::Windows::Forms::Label());
 			this->label66 = (gcnew System::Windows::Forms::Label());
-			this->label67 = (gcnew System::Windows::Forms::Label());
-			this->label68 = (gcnew System::Windows::Forms::Label());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->panel15 = (gcnew System::Windows::Forms::Panel());
-			this->label73 = (gcnew System::Windows::Forms::Label());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
+			this->panel13 = (gcnew System::Windows::Forms::Panel());
+			this->button19 = (gcnew System::Windows::Forms::Button());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label63 = (gcnew System::Windows::Forms::Label());
+			this->label62 = (gcnew System::Windows::Forms::Label());
+			this->label61 = (gcnew System::Windows::Forms::Label());
 			this->panel5->SuspendLayout();
 			this->panel11->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox10))->BeginInit();
@@ -470,9 +470,9 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->panel12->SuspendLayout();
-			this->panel13->SuspendLayout();
-			this->panel14->SuspendLayout();
 			this->panel15->SuspendLayout();
+			this->panel14->SuspendLayout();
+			this->panel13->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel5
@@ -1793,72 +1793,80 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel12->Size = System::Drawing::Size(188, 739);
 			this->panel12->TabIndex = 12;
 			// 
-			// panel13
+			// panel15
 			// 
-			this->panel13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel13->Controls->Add(this->button19);
-			this->panel13->Controls->Add(this->textBox2);
-			this->panel13->Controls->Add(this->textBox1);
-			this->panel13->Controls->Add(this->label63);
-			this->panel13->Controls->Add(this->label62);
-			this->panel13->Controls->Add(this->label61);
-			this->panel13->Location = System::Drawing::Point(0, 11);
-			this->panel13->Name = L"panel13";
-			this->panel13->Size = System::Drawing::Size(187, 203);
-			this->panel13->TabIndex = 2;
+			this->panel15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel15->Controls->Add(this->checkBox5);
+			this->panel15->Controls->Add(this->checkBox4);
+			this->panel15->Controls->Add(this->checkBox3);
+			this->panel15->Controls->Add(this->checkBox2);
+			this->panel15->Controls->Add(this->checkBox1);
+			this->panel15->Controls->Add(this->label73);
+			this->panel15->Location = System::Drawing::Point(0, 429);
+			this->panel15->Name = L"panel15";
+			this->panel15->Size = System::Drawing::Size(187, 203);
+			this->panel15->TabIndex = 8;
 			// 
-			// label61
+			// checkBox5
 			// 
-			this->label61->AutoSize = true;
-			this->label61->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->checkBox5->AutoSize = true;
+			this->checkBox5->Location = System::Drawing::Point(26, 148);
+			this->checkBox5->Name = L"checkBox5";
+			this->checkBox5->Size = System::Drawing::Size(95, 17);
+			this->checkBox5->TabIndex = 12;
+			this->checkBox5->Text = L"5 BHK or more";
+			this->checkBox5->UseVisualStyleBackColor = true;
+			// 
+			// checkBox4
+			// 
+			this->checkBox4->AutoSize = true;
+			this->checkBox4->Location = System::Drawing::Point(26, 125);
+			this->checkBox4->Name = L"checkBox4";
+			this->checkBox4->Size = System::Drawing::Size(57, 17);
+			this->checkBox4->TabIndex = 11;
+			this->checkBox4->Text = L"4 BHK";
+			this->checkBox4->UseVisualStyleBackColor = true;
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->Location = System::Drawing::Point(26, 102);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(57, 17);
+			this->checkBox3->TabIndex = 10;
+			this->checkBox3->Text = L"3 BHK";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Location = System::Drawing::Point(26, 78);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(57, 17);
+			this->checkBox2->TabIndex = 9;
+			this->checkBox2->Text = L"2 BHK";
+			this->checkBox2->UseVisualStyleBackColor = true;
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(26, 55);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(57, 17);
+			this->checkBox1->TabIndex = 8;
+			this->checkBox1->Text = L"1 BHK";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			// 
+			// label73
+			// 
+			this->label73->AutoSize = true;
+			this->label73->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label61->Location = System::Drawing::Point(27, 17);
-			this->label61->Name = L"label61";
-			this->label61->Size = System::Drawing::Size(110, 18);
-			this->label61->TabIndex = 0;
-			this->label61->Text = L"Refine by Area";
-			// 
-			// label62
-			// 
-			this->label62->AutoSize = true;
-			this->label62->Location = System::Drawing::Point(27, 57);
-			this->label62->Name = L"label62";
-			this->label62->Size = System::Drawing::Size(79, 13);
-			this->label62->TabIndex = 1;
-			this->label62->Text = L"Minimum Area :";
-			this->label62->Click += gcnew System::EventHandler(this, &Buy_form::label62_Click);
-			// 
-			// label63
-			// 
-			this->label63->AutoSize = true;
-			this->label63->Location = System::Drawing::Point(27, 113);
-			this->label63->Name = L"label63";
-			this->label63->Size = System::Drawing::Size(82, 13);
-			this->label63->TabIndex = 2;
-			this->label63->Text = L"Maximum Area :";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(30, 73);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 3;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(30, 129);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 4;
-			// 
-			// button19
-			// 
-			this->button19->Location = System::Drawing::Point(30, 158);
-			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(79, 23);
-			this->button19->TabIndex = 5;
-			this->button19->Text = L"Refine";
-			this->button19->UseVisualStyleBackColor = true;
+			this->label73->Location = System::Drawing::Point(27, 17);
+			this->label73->Name = L"label73";
+			this->label73->Size = System::Drawing::Size(41, 18);
+			this->label73->TabIndex = 0;
+			this->label73->Text = L"BHK";
 			// 
 			// panel14
 			// 
@@ -1875,6 +1883,24 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel14->Name = L"panel14";
 			this->panel14->Size = System::Drawing::Size(187, 203);
 			this->panel14->TabIndex = 7;
+			// 
+			// label68
+			// 
+			this->label68->AutoSize = true;
+			this->label68->Location = System::Drawing::Point(3, 132);
+			this->label68->Name = L"label68";
+			this->label68->Size = System::Drawing::Size(23, 13);
+			this->label68->TabIndex = 7;
+			this->label68->Text = L"Rs.";
+			// 
+			// label67
+			// 
+			this->label67->AutoSize = true;
+			this->label67->Location = System::Drawing::Point(3, 75);
+			this->label67->Name = L"label67";
+			this->label67->Size = System::Drawing::Size(23, 13);
+			this->label67->TabIndex = 6;
+			this->label67->Text = L"Rs.";
 			// 
 			// button20
 			// 
@@ -1928,98 +1954,72 @@ private: System::Windows::Forms::Label^  label73;
 			this->label66->TabIndex = 0;
 			this->label66->Text = L"Refine by Price";
 			// 
-			// label67
+			// panel13
 			// 
-			this->label67->AutoSize = true;
-			this->label67->Location = System::Drawing::Point(3, 75);
-			this->label67->Name = L"label67";
-			this->label67->Size = System::Drawing::Size(23, 13);
-			this->label67->TabIndex = 6;
-			this->label67->Text = L"Rs.";
+			this->panel13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel13->Controls->Add(this->button19);
+			this->panel13->Controls->Add(this->textBox2);
+			this->panel13->Controls->Add(this->textBox1);
+			this->panel13->Controls->Add(this->label63);
+			this->panel13->Controls->Add(this->label62);
+			this->panel13->Controls->Add(this->label61);
+			this->panel13->Location = System::Drawing::Point(0, 11);
+			this->panel13->Name = L"panel13";
+			this->panel13->Size = System::Drawing::Size(187, 203);
+			this->panel13->TabIndex = 2;
 			// 
-			// label68
+			// button19
 			// 
-			this->label68->AutoSize = true;
-			this->label68->Location = System::Drawing::Point(3, 132);
-			this->label68->Name = L"label68";
-			this->label68->Size = System::Drawing::Size(23, 13);
-			this->label68->TabIndex = 7;
-			this->label68->Text = L"Rs.";
+			this->button19->Location = System::Drawing::Point(30, 158);
+			this->button19->Name = L"button19";
+			this->button19->Size = System::Drawing::Size(79, 23);
+			this->button19->TabIndex = 5;
+			this->button19->Text = L"Refine";
+			this->button19->UseVisualStyleBackColor = true;
 			// 
-			// checkBox1
+			// textBox2
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(26, 55);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(57, 17);
-			this->checkBox1->TabIndex = 8;
-			this->checkBox1->Text = L"1 BHK";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->textBox2->Location = System::Drawing::Point(30, 129);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->TabIndex = 4;
 			// 
-			// panel15
+			// textBox1
 			// 
-			this->panel15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel15->Controls->Add(this->checkBox5);
-			this->panel15->Controls->Add(this->checkBox4);
-			this->panel15->Controls->Add(this->checkBox3);
-			this->panel15->Controls->Add(this->checkBox2);
-			this->panel15->Controls->Add(this->checkBox1);
-			this->panel15->Controls->Add(this->label73);
-			this->panel15->Location = System::Drawing::Point(0, 429);
-			this->panel15->Name = L"panel15";
-			this->panel15->Size = System::Drawing::Size(187, 203);
-			this->panel15->TabIndex = 8;
+			this->textBox1->Location = System::Drawing::Point(30, 73);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->TabIndex = 3;
 			// 
-			// label73
+			// label63
 			// 
-			this->label73->AutoSize = true;
-			this->label73->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label63->AutoSize = true;
+			this->label63->Location = System::Drawing::Point(27, 113);
+			this->label63->Name = L"label63";
+			this->label63->Size = System::Drawing::Size(82, 13);
+			this->label63->TabIndex = 2;
+			this->label63->Text = L"Maximum Area :";
+			// 
+			// label62
+			// 
+			this->label62->AutoSize = true;
+			this->label62->Location = System::Drawing::Point(27, 57);
+			this->label62->Name = L"label62";
+			this->label62->Size = System::Drawing::Size(79, 13);
+			this->label62->TabIndex = 1;
+			this->label62->Text = L"Minimum Area :";
+			this->label62->Click += gcnew System::EventHandler(this, &Buy_form::label62_Click);
+			// 
+			// label61
+			// 
+			this->label61->AutoSize = true;
+			this->label61->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label73->Location = System::Drawing::Point(27, 17);
-			this->label73->Name = L"label73";
-			this->label73->Size = System::Drawing::Size(41, 18);
-			this->label73->TabIndex = 0;
-			this->label73->Text = L"BHK";
-			// 
-			// checkBox2
-			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(26, 78);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(57, 17);
-			this->checkBox2->TabIndex = 9;
-			this->checkBox2->Text = L"2 BHK";
-			this->checkBox2->UseVisualStyleBackColor = true;
-			// 
-			// checkBox3
-			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(26, 102);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(57, 17);
-			this->checkBox3->TabIndex = 10;
-			this->checkBox3->Text = L"3 BHK";
-			this->checkBox3->UseVisualStyleBackColor = true;
-			// 
-			// checkBox4
-			// 
-			this->checkBox4->AutoSize = true;
-			this->checkBox4->Location = System::Drawing::Point(26, 125);
-			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(57, 17);
-			this->checkBox4->TabIndex = 11;
-			this->checkBox4->Text = L"4 BHK";
-			this->checkBox4->UseVisualStyleBackColor = true;
-			// 
-			// checkBox5
-			// 
-			this->checkBox5->AutoSize = true;
-			this->checkBox5->Location = System::Drawing::Point(26, 148);
-			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(95, 17);
-			this->checkBox5->TabIndex = 12;
-			this->checkBox5->Text = L"5 BHK or more";
-			this->checkBox5->UseVisualStyleBackColor = true;
+			this->label61->Location = System::Drawing::Point(27, 17);
+			this->label61->Name = L"label61";
+			this->label61->Size = System::Drawing::Size(110, 18);
+			this->label61->TabIndex = 0;
+			this->label61->Text = L"Refine by Area";
 			// 
 			// Buy_form
 			// 
@@ -2033,7 +2033,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->Controls->Add(this->panel12);
 			this->Controls->Add(this->panel5);
 			this->Name = L"Buy_form";
-			this->Text = L"Buy_form";
+			this->Text = L"Buy";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->panel5->ResumeLayout(false);
 			this->panel11->ResumeLayout(false);
@@ -2067,12 +2067,12 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->panel12->ResumeLayout(false);
-			this->panel13->ResumeLayout(false);
-			this->panel13->PerformLayout();
-			this->panel14->ResumeLayout(false);
-			this->panel14->PerformLayout();
 			this->panel15->ResumeLayout(false);
 			this->panel15->PerformLayout();
+			this->panel14->ResumeLayout(false);
+			this->panel14->PerformLayout();
+			this->panel13->ResumeLayout(false);
+			this->panel13->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
