@@ -358,6 +358,8 @@ namespace RealEstate {
 			this->city->Name = L"city";
 			this->city->Size = System::Drawing::Size(149, 30);
 			this->city->TabIndex = 20;
+			this->city->Text = L"City";
+			this->city->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &Main::city_MouseClick_1);
 			// 
 			// go
 			// 
@@ -391,13 +393,11 @@ namespace RealEstate {
 				static_cast<System::Byte>(0)));
 			this->linkLabel1->LinkBehavior = System::Windows::Forms::LinkBehavior::NeverUnderline;
 			this->linkLabel1->LinkColor = System::Drawing::Color::Silver;
-			this->linkLabel1->Location = System::Drawing::Point(825, 12);
+			this->linkLabel1->Location = System::Drawing::Point(506, 12);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(115, 29);
+			this->linkLabel1->Size = System::Drawing::Size(434, 29);
 			this->linkLabel1->TabIndex = 22;
-			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Username";
-			this->linkLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->linkLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->linkLabel1->Visible = false;
 			this->linkLabel1->VisitedLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)));
@@ -526,7 +526,7 @@ private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^ 
 				 array<String^>^ details=db.get_user_details(username->Text,password->Text);
 				 //MessageBox::Show("Welcome, "+details[3]);
 				 REGISTER->Visible = false;
-				 linkLabel1->Text = details[3];
+				 linkLabel1->Text = details[1];
 				 login1->Visible = false;
 				 panel1->Visible = false;
 				 linkLabel1->Visible = true;
@@ -540,8 +540,26 @@ private: System::Void login_Click_1(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
-			 sell^ f2 = gcnew sell();
-			 f2->ShowDialog();
+			 if(Sell->Checked==true || rent->Checked==true)
+			 {
+				 if(linkLabel1->Text!="")
+				 {
+					 if(city->Text!="" && city->Text!="City")
+					 {
+						 sell^ f2;
+						 this->Hide();
+						 if(Sell->Checked==true)
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this);
+						 else
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this);
+						 f2->Show();
+					 }
+					 else
+						 MessageBox::Show("Enter your city first.");
+				 }
+				 else
+					 MessageBox::Show("You must login first to sell/rent a property");
+			 }
 		 }
 private: System::Void password_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
@@ -605,6 +623,9 @@ private: System::Void myaccount_Click(System::Object^  sender, System::EventArgs
 			 logoutpanel->Visible = false;
 			 profile^ f3 = gcnew profile();
 			 f3->ShowDialog();
+		 }
+private: System::Void city_MouseClick_1(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		 city->Text = "";
 		 }
 };
 }

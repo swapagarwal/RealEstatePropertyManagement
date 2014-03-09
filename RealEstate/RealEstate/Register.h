@@ -8,6 +8,7 @@ namespace RealEstate {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for Register
@@ -112,10 +113,10 @@ namespace RealEstate {
 			this->username->BackColor = System::Drawing::SystemColors::Window;
 			this->username->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->username->Location = System::Drawing::Point(154, 12);
+			this->username->Location = System::Drawing::Point(164, 70);
 			this->username->Name = L"username";
 			this->username->Size = System::Drawing::Size(200, 26);
-			this->username->TabIndex = 0;
+			this->username->TabIndex = 2;
 			// 
 			// label1
 			// 
@@ -123,7 +124,7 @@ namespace RealEstate {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(51, 15);
+			this->label1->Location = System::Drawing::Point(61, 73);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(97, 18);
 			this->label1->TabIndex = 1;
@@ -136,7 +137,7 @@ namespace RealEstate {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(3, 101);
+			this->label4->Location = System::Drawing::Point(13, 164);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(145, 18);
 			this->label4->TabIndex = 3;
@@ -147,7 +148,7 @@ namespace RealEstate {
 			this->email->BackColor = System::Drawing::SystemColors::Window;
 			this->email->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->email->Location = System::Drawing::Point(152, 189);
+			this->email->Location = System::Drawing::Point(164, 205);
 			this->email->Name = L"email";
 			this->email->Size = System::Drawing::Size(200, 26);
 			this->email->TabIndex = 5;
@@ -159,7 +160,7 @@ namespace RealEstate {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(62, 56);
+			this->label3->Location = System::Drawing::Point(72, 119);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(86, 18);
 			this->label3->TabIndex = 5;
@@ -170,10 +171,10 @@ namespace RealEstate {
 			this->pass->BackColor = System::Drawing::SystemColors::Window;
 			this->pass->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->pass->Location = System::Drawing::Point(154, 53);
+			this->pass->Location = System::Drawing::Point(164, 116);
 			this->pass->Name = L"pass";
 			this->pass->Size = System::Drawing::Size(200, 26);
-			this->pass->TabIndex = 2;
+			this->pass->TabIndex = 3;
 			this->pass->UseSystemPasswordChar = true;
 			// 
 			// label2
@@ -183,7 +184,7 @@ namespace RealEstate {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(90, 192);
+			this->label2->Location = System::Drawing::Point(102, 208);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(56, 18);
 			this->label2->TabIndex = 7;
@@ -194,10 +195,10 @@ namespace RealEstate {
 			this->con_pass->BackColor = System::Drawing::SystemColors::Window;
 			this->con_pass->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->con_pass->Location = System::Drawing::Point(154, 98);
+			this->con_pass->Location = System::Drawing::Point(164, 161);
 			this->con_pass->Name = L"con_pass";
 			this->con_pass->Size = System::Drawing::Size(200, 26);
-			this->con_pass->TabIndex = 3;
+			this->con_pass->TabIndex = 4;
 			this->con_pass->UseSystemPasswordChar = true;
 			// 
 			// label5
@@ -207,7 +208,7 @@ namespace RealEstate {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::White;
-			this->label5->Location = System::Drawing::Point(28, 231);
+			this->label5->Location = System::Drawing::Point(40, 247);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(120, 18);
 			this->label5->TabIndex = 9;
@@ -218,7 +219,7 @@ namespace RealEstate {
 			this->contact->BackColor = System::Drawing::SystemColors::Window;
 			this->contact->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->contact->Location = System::Drawing::Point(154, 231);
+			this->contact->Location = System::Drawing::Point(166, 247);
 			this->contact->Name = L"contact";
 			this->contact->Size = System::Drawing::Size(200, 26);
 			this->contact->TabIndex = 6;
@@ -230,7 +231,7 @@ namespace RealEstate {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::White;
-			this->label6->Location = System::Drawing::Point(105, 278);
+			this->label6->Location = System::Drawing::Point(117, 294);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(43, 18);
 			this->label6->TabIndex = 10;
@@ -241,10 +242,11 @@ namespace RealEstate {
 			this->city->BackColor = System::Drawing::SystemColors::Window;
 			this->city->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->city->Location = System::Drawing::Point(154, 275);
+			this->city->Location = System::Drawing::Point(166, 291);
 			this->city->Name = L"city";
 			this->city->Size = System::Drawing::Size(200, 26);
 			this->city->TabIndex = 7;
+			this->city->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Register::city_KeyDown);
 			// 
 			// signup
 			// 
@@ -255,7 +257,7 @@ namespace RealEstate {
 			this->signup->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->signup->ForeColor = System::Drawing::Color::White;
-			this->signup->Location = System::Drawing::Point(154, 339);
+			this->signup->Location = System::Drawing::Point(105, 336);
 			this->signup->Name = L"signup";
 			this->signup->Size = System::Drawing::Size(180, 29);
 			this->signup->TabIndex = 8;
@@ -270,7 +272,7 @@ namespace RealEstate {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::White;
-			this->label7->Location = System::Drawing::Point(90, 144);
+			this->label7->Location = System::Drawing::Point(100, 28);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(58, 18);
 			this->label7->TabIndex = 14;
@@ -281,10 +283,10 @@ namespace RealEstate {
 			this->name->BackColor = System::Drawing::SystemColors::Window;
 			this->name->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->name->Location = System::Drawing::Point(154, 144);
+			this->name->Location = System::Drawing::Point(164, 28);
 			this->name->Name = L"name";
 			this->name->Size = System::Drawing::Size(200, 26);
-			this->name->TabIndex = 4;
+			this->name->TabIndex = 1;
 			// 
 			// Register
 			// 
@@ -323,13 +325,39 @@ namespace RealEstate {
 		}
 #pragma endregion
 		Database db;
-private: System::Void Register_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void signup_Click(System::Object^  sender, System::EventArgs^  e) {
-			 if(pass->Text==con_pass->Text)
-			 db.user_reg(username->Text,pass->Text,name->Text,email->Text,contact->Text,city->Text);
-			 else
-				MessageBox::Show("Passwords do not match !");
-		 }
-};
+	private: System::Void Register_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void signup_Click(System::Object^  sender, System::EventArgs^  e) {
+				 MySqlConnection^ connection=gcnew MySqlConnection("datasource=127.0.0.1;port=3306;user=root;password=toor");
+				 MySqlCommand^ cmd=gcnew MySqlCommand("Select * From repm.users where username='"+username->Text+"';",connection);
+				 cmd->Connection->Open();
+				 MySqlDataReader^ mydata=cmd->ExecuteReader();
+				 mydata->Close();
+				 cmd->CommandText="Select found_rows();";
+				 mydata=cmd->ExecuteReader();
+				 mydata->Read();
+				 if(mydata->GetString(0)!="0")
+				 {
+					 cmd->Connection->Close();
+					 MessageBox::Show("Username is already taken!");
+				 }
+				 else
+				 {
+					 cmd->Connection->Close();
+					 if(pass->Text==con_pass->Text)
+					 {
+						 db.user_reg(username->Text,pass->Text,name->Text,email->Text,contact->Text,city->Text);
+						 this->Close();
+					 }
+					 else
+						 MessageBox::Show("Passwords do not match !");
+				 }
+			 }
+	private: System::Void city_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+				 if(e->KeyCode == Keys::Enter)
+				 {
+					 signup_Click(sender,e);
+				 }
+			 }
+	};
 }
