@@ -98,6 +98,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="view_details.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buy_form.h">
@@ -118,6 +119,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="view_details.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sell.resx">
       <DependentUpon>sell.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_details.resx">
+      <DependentUpon>view_details.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -24,6 +24,7 @@ namespace RealEstate {
 	private: System::Windows::Forms::PictureBox^  map;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  map_upload;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 	public: 
 
@@ -155,10 +156,12 @@ namespace RealEstate {
 			this->map = (gcnew System::Windows::Forms::PictureBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->map_upload = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->image))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->floor_plan))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->map))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label3
@@ -167,23 +170,23 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Snow;
+			this->label3->ForeColor = System::Drawing::Color::Black;
 			this->label3->Location = System::Drawing::Point(85, 154);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(60, 19);
+			this->label3->Size = System::Drawing::Size(73, 23);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Address";
 			// 
 			// address
 			// 
-			this->address->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->address->BackColor = System::Drawing::SystemColors::Info;
+			this->address->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->address->Location = System::Drawing::Point(263, 153);
+			this->address->MaximumSize = System::Drawing::Size(301, 1000);
+			this->address->Multiline = true;
 			this->address->Name = L"address";
-			this->address->Size = System::Drawing::Size(279, 20);
+			this->address->Size = System::Drawing::Size(295, 24);
 			this->address->TabIndex = 3;
 			// 
 			// label4
@@ -192,12 +195,12 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Snow;
+			this->label4->ForeColor = System::Drawing::Color::Black;
 			this->label4->Location = System::Drawing::Point(82, 60);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(64, 19);
+			this->label4->Size = System::Drawing::Size(81, 23);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"Category";
 			// 
@@ -207,12 +210,12 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->radioButton3->AutoSize = true;
 			this->radioButton3->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->radioButton3->ForeColor = System::Drawing::Color::Snow;
+			this->radioButton3->ForeColor = System::Drawing::Color::Black;
 			this->radioButton3->Location = System::Drawing::Point(48, 9);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(104, 25);
+			this->radioButton3->Size = System::Drawing::Size(114, 27);
 			this->radioButton3->TabIndex = 8;
 			this->radioButton3->TabStop = true;
 			this->radioButton3->Text = L"Apartment";
@@ -225,12 +228,12 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->radioButton4->AutoSize = true;
 			this->radioButton4->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->radioButton4->ForeColor = System::Drawing::Color::Snow;
+			this->radioButton4->ForeColor = System::Drawing::Color::Black;
 			this->radioButton4->Location = System::Drawing::Point(158, 9);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(56, 25);
+			this->radioButton4->Size = System::Drawing::Size(58, 27);
 			this->radioButton4->TabIndex = 9;
 			this->radioButton4->TabStop = true;
 			this->radioButton4->Text = L"Flat";
@@ -241,12 +244,12 @@ namespace RealEstate {
 			// 
 			this->radioButton5->AutoSize = true;
 			this->radioButton5->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton5->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->radioButton5->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->radioButton5->ForeColor = System::Drawing::Color::Snow;
+			this->radioButton5->ForeColor = System::Drawing::Color::Black;
 			this->radioButton5->Location = System::Drawing::Point(218, 9);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(55, 25);
+			this->radioButton5->Size = System::Drawing::Size(59, 27);
 			this->radioButton5->TabIndex = 10;
 			this->radioButton5->TabStop = true;
 			this->radioButton5->Text = L"plot";
@@ -259,12 +262,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label5->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::Snow;
+			this->label5->ForeColor = System::Drawing::Color::Black;
 			this->label5->Location = System::Drawing::Point(83, 225);
+			this->label5->Margin = System::Windows::Forms::Padding(3);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(82, 19);
+			this->label5->Size = System::Drawing::Size(98, 23);
 			this->label5->TabIndex = 11;
 			this->label5->Text = L"Age (years)";
 			// 
@@ -272,10 +276,10 @@ namespace RealEstate {
 			// 
 			this->age->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->age->BackColor = System::Drawing::SystemColors::Info;
+			this->age->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->age->Location = System::Drawing::Point(262, 224);
 			this->age->Name = L"age";
-			this->age->Size = System::Drawing::Size(91, 20);
+			this->age->Size = System::Drawing::Size(113, 20);
 			this->age->TabIndex = 5;
 			// 
 			// label6
@@ -284,12 +288,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label6->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::Snow;
+			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Location = System::Drawing::Point(83, 261);
+			this->label6->Margin = System::Windows::Forms::Padding(3);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(87, 19);
+			this->label6->Size = System::Drawing::Size(97, 23);
 			this->label6->TabIndex = 13;
 			this->label6->Text = L"Area (sq ft)";
 			// 
@@ -297,10 +302,10 @@ namespace RealEstate {
 			// 
 			this->area->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->area->BackColor = System::Drawing::SystemColors::Info;
+			this->area->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->area->Location = System::Drawing::Point(263, 260);
 			this->area->Name = L"area";
-			this->area->Size = System::Drawing::Size(91, 20);
+			this->area->Size = System::Drawing::Size(113, 20);
 			this->area->TabIndex = 6;
 			// 
 			// label7
@@ -309,12 +314,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label7->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::Color::Snow;
+			this->label7->ForeColor = System::Drawing::Color::Black;
 			this->label7->Location = System::Drawing::Point(82, 297);
+			this->label7->Margin = System::Windows::Forms::Padding(3);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(100, 19);
+			this->label7->Size = System::Drawing::Size(117, 23);
 			this->label7->TabIndex = 15;
 			this->label7->Text = L"Price (in Lacs)";
 			// 
@@ -322,10 +328,10 @@ namespace RealEstate {
 			// 
 			this->price->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->price->BackColor = System::Drawing::SystemColors::Info;
+			this->price->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->price->Location = System::Drawing::Point(263, 296);
 			this->price->Name = L"price";
-			this->price->Size = System::Drawing::Size(274, 20);
+			this->price->Size = System::Drawing::Size(296, 20);
 			this->price->TabIndex = 7;
 			// 
 			// label8
@@ -334,12 +340,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label8->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::Color::Snow;
+			this->label8->ForeColor = System::Drawing::Color::Black;
 			this->label8->Location = System::Drawing::Point(83, 334);
+			this->label8->Margin = System::Windows::Forms::Padding(3);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(79, 19);
+			this->label8->Size = System::Drawing::Size(99, 23);
 			this->label8->TabIndex = 17;
 			this->label8->Text = L"Description";
 			// 
@@ -349,12 +356,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label9->AutoSize = true;
 			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label9->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::Color::Snow;
+			this->label9->ForeColor = System::Drawing::Color::Black;
 			this->label9->Location = System::Drawing::Point(83, 425);
+			this->label9->Margin = System::Windows::Forms::Padding(3);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(37, 19);
+			this->label9->Size = System::Drawing::Size(45, 23);
 			this->label9->TabIndex = 19;
 			this->label9->Text = L"rand";
 			this->label9->Visible = false;
@@ -365,12 +373,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label10->AutoSize = true;
 			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label10->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::Color::Snow;
+			this->label10->ForeColor = System::Drawing::Color::Black;
 			this->label10->Location = System::Drawing::Point(82, 459);
+			this->label10->Margin = System::Windows::Forms::Padding(3);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(37, 19);
+			this->label10->Size = System::Drawing::Size(45, 23);
 			this->label10->TabIndex = 20;
 			this->label10->Text = L"rand";
 			this->label10->Visible = false;
@@ -379,10 +388,10 @@ namespace RealEstate {
 			// 
 			this->rand_1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->rand_1->BackColor = System::Drawing::SystemColors::Info;
+			this->rand_1->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->rand_1->Location = System::Drawing::Point(263, 424);
 			this->rand_1->Name = L"rand_1";
-			this->rand_1->Size = System::Drawing::Size(91, 20);
+			this->rand_1->Size = System::Drawing::Size(113, 20);
 			this->rand_1->TabIndex = 9;
 			this->rand_1->Visible = false;
 			// 
@@ -390,7 +399,7 @@ namespace RealEstate {
 			// 
 			this->rand_2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->rand_2->BackColor = System::Drawing::SystemColors::Info;
+			this->rand_2->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->rand_2->Location = System::Drawing::Point(263, 460);
 			this->rand_2->Name = L"rand_2";
 			this->rand_2->Size = System::Drawing::Size(91, 20);
@@ -403,7 +412,7 @@ namespace RealEstate {
 			this->groupBox1->Controls->Add(this->radioButton4);
 			this->groupBox1->Controls->Add(this->radioButton3);
 			this->groupBox1->Controls->Add(this->radioButton5);
-			this->groupBox1->ForeColor = System::Drawing::Color::Snow;
+			this->groupBox1->ForeColor = System::Drawing::Color::Black;
 			this->groupBox1->Location = System::Drawing::Point(258, 56);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(279, 38);
@@ -413,14 +422,14 @@ namespace RealEstate {
 			// 
 			// button1
 			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button1->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(1046, 688);
+			this->button1->Location = System::Drawing::Point(1189, 806);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(80, 23);
+			this->button1->Size = System::Drawing::Size(80, 39);
 			this->button1->TabIndex = 24;
 			this->button1->Text = L"Submit";
 			this->button1->UseVisualStyleBackColor = false;
@@ -432,12 +441,13 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label11->AutoSize = true;
 			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label11->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::Color::Snow;
+			this->label11->ForeColor = System::Drawing::Color::Black;
 			this->label11->Location = System::Drawing::Point(85, 189);
+			this->label11->Margin = System::Windows::Forms::Padding(3);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(57, 19);
+			this->label11->Size = System::Drawing::Size(72, 23);
 			this->label11->TabIndex = 25;
 			this->label11->Text = L"Contact";
 			// 
@@ -445,40 +455,41 @@ namespace RealEstate {
 			// 
 			this->contact->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->contact->BackColor = System::Drawing::SystemColors::Info;
+			this->contact->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->contact->Location = System::Drawing::Point(263, 188);
 			this->contact->Name = L"contact";
-			this->contact->Size = System::Drawing::Size(91, 20);
+			this->contact->Size = System::Drawing::Size(113, 20);
 			this->contact->TabIndex = 4;
 			// 
 			// desc
 			// 
-			this->desc->BackColor = System::Drawing::SystemColors::Info;
+			this->desc->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->desc->Location = System::Drawing::Point(262, 334);
 			this->desc->Multiline = true;
 			this->desc->Name = L"desc";
-			this->desc->Size = System::Drawing::Size(274, 71);
+			this->desc->Size = System::Drawing::Size(296, 71);
 			this->desc->TabIndex = 8;
 			// 
 			// label12
 			// 
-			this->label12->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label12->AutoSize = true;
 			this->label12->BackColor = System::Drawing::Color::Transparent;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label12->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::Color::Snow;
-			this->label12->Location = System::Drawing::Point(959, 62);
+			this->label12->ForeColor = System::Drawing::Color::Black;
+			this->label12->Location = System::Drawing::Point(118, 566);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(47, 19);
+			this->label12->Size = System::Drawing::Size(59, 23);
 			this->label12->TabIndex = 27;
 			this->label12->Text = L"Image";
+			this->label12->Click += gcnew System::EventHandler(this, &sell::label12_Click);
 			// 
 			// image
 			// 
-			this->image->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->image->BackColor = System::Drawing::SystemColors::Info;
-			this->image->Location = System::Drawing::Point(963, 90);
+			this->image->BackColor = System::Drawing::Color::White;
+			this->image->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->image->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"image.Image")));
+			this->image->Location = System::Drawing::Point(119, 599);
 			this->image->MaximumSize = System::Drawing::Size(163, 99);
 			this->image->MinimumSize = System::Drawing::Size(163, 99);
 			this->image->Name = L"image";
@@ -486,17 +497,17 @@ namespace RealEstate {
 			this->image->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->image->TabIndex = 28;
 			this->image->TabStop = false;
+			this->image->Click += gcnew System::EventHandler(this, &sell::image_Click);
 			// 
 			// button2
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button2->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Black;
-			this->button2->Location = System::Drawing::Point(1046, 200);
+			this->button2->Location = System::Drawing::Point(202, 729);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(80, 23);
+			this->button2->Size = System::Drawing::Size(80, 32);
 			this->button2->TabIndex = 29;
 			this->button2->Text = L"Upload";
 			this->button2->UseVisualStyleBackColor = false;
@@ -504,9 +515,10 @@ namespace RealEstate {
 			// 
 			// floor_plan
 			// 
-			this->floor_plan->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->floor_plan->BackColor = System::Drawing::SystemColors::Info;
-			this->floor_plan->Location = System::Drawing::Point(963, 268);
+			this->floor_plan->BackColor = System::Drawing::Color::White;
+			this->floor_plan->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->floor_plan->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"floor_plan.Image")));
+			this->floor_plan->Location = System::Drawing::Point(401, 599);
 			this->floor_plan->MaximumSize = System::Drawing::Size(163, 99);
 			this->floor_plan->MinimumSize = System::Drawing::Size(163, 99);
 			this->floor_plan->Name = L"floor_plan";
@@ -518,28 +530,26 @@ namespace RealEstate {
 			// 
 			// label13
 			// 
-			this->label13->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label13->AutoSize = true;
 			this->label13->BackColor = System::Drawing::Color::Transparent;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label13->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label13->ForeColor = System::Drawing::Color::Snow;
-			this->label13->Location = System::Drawing::Point(959, 235);
+			this->label13->ForeColor = System::Drawing::Color::Black;
+			this->label13->Location = System::Drawing::Point(397, 566);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(72, 19);
+			this->label13->Size = System::Drawing::Size(88, 23);
 			this->label13->TabIndex = 31;
 			this->label13->Text = L"Floor Plan";
 			// 
 			// floor_upload
 			// 
-			this->floor_upload->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->floor_upload->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->floor_upload->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->floor_upload->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->floor_upload->ForeColor = System::Drawing::Color::Black;
-			this->floor_upload->Location = System::Drawing::Point(1046, 396);
+			this->floor_upload->Location = System::Drawing::Point(484, 727);
 			this->floor_upload->Name = L"floor_upload";
-			this->floor_upload->Size = System::Drawing::Size(80, 23);
+			this->floor_upload->Size = System::Drawing::Size(80, 32);
 			this->floor_upload->TabIndex = 32;
 			this->floor_upload->Text = L"Upload";
 			this->floor_upload->UseVisualStyleBackColor = false;
@@ -551,12 +561,12 @@ namespace RealEstate {
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Snow;
+			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(82, 116);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(103, 19);
+			this->label1->Size = System::Drawing::Size(126, 23);
 			this->label1->TabIndex = 33;
 			this->label1->Text = L"Available From";
 			// 
@@ -569,9 +579,10 @@ namespace RealEstate {
 			// 
 			// map
 			// 
-			this->map->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->map->BackColor = System::Drawing::SystemColors::Info;
-			this->map->Location = System::Drawing::Point(958, 491);
+			this->map->BackColor = System::Drawing::Color::White;
+			this->map->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->map->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"map.Image")));
+			this->map->Location = System::Drawing::Point(732, 599);
 			this->map->MaximumSize = System::Drawing::Size(163, 99);
 			this->map->MinimumSize = System::Drawing::Size(163, 99);
 			this->map->Name = L"map";
@@ -583,40 +594,54 @@ namespace RealEstate {
 			// 
 			// label2
 			// 
-			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::Snow;
-			this->label2->Location = System::Drawing::Point(959, 450);
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(737, 566);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(34, 19);
+			this->label2->Size = System::Drawing::Size(45, 23);
 			this->label2->TabIndex = 36;
 			this->label2->Text = L"Map";
 			// 
 			// map_upload
 			// 
-			this->map_upload->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->map_upload->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->map_upload->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->map_upload->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->map_upload->ForeColor = System::Drawing::Color::Black;
-			this->map_upload->Location = System::Drawing::Point(1041, 621);
+			this->map_upload->Location = System::Drawing::Point(815, 729);
 			this->map_upload->Name = L"map_upload";
-			this->map_upload->Size = System::Drawing::Size(80, 23);
+			this->map_upload->Size = System::Drawing::Size(80, 32);
 			this->map_upload->TabIndex = 37;
 			this->map_upload->Text = L"Upload";
 			this->map_upload->UseVisualStyleBackColor = false;
 			this->map_upload->Click += gcnew System::EventHandler(this, &sell::map_upload_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(565, 44);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(734, 519);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 38;
+			this->pictureBox1->TabStop = false;
+			// 
 			// sell
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1164, 733);
+			this->AutoScroll = true;
+			this->AutoScrollMinSize = System::Drawing::Size(1, 1);
+			this->AutoSize = true;
+			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->BackColor = System::Drawing::Color::White;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->ClientSize = System::Drawing::Size(1350, 729);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->map_upload);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->map);
@@ -649,7 +674,6 @@ namespace RealEstate {
 			this->Controls->Add(this->label3);
 			this->Name = L"sell";
 			this->Text = L"sell";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &sell::sell_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &sell::sell_Load);
 			this->groupBox1->ResumeLayout(false);
@@ -657,6 +681,7 @@ namespace RealEstate {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->image))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->floor_plan))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->map))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -762,6 +787,7 @@ namespace RealEstate {
 			 {
 				 OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog();
 				 openFileDialog1->InitialDirectory = "c:\\" ;
+				 openFileDialog1->Filter="Image Files (*.bmp,*.jpeg,*.png,*.jpg)|*.bmp;*.jpeg;*.png;*.jpg";
 				 openFileDialog1->ShowDialog();
 				 floor_plan_location=openFileDialog1->FileName;
 				 floor_plan->ImageLocation=floor_plan_location;
@@ -783,6 +809,7 @@ namespace RealEstate {
 			 {
 				 OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog();
 				 openFileDialog1->InitialDirectory = "c:\\" ;
+				 openFileDialog1->Filter="Image Files (*.bmp,*.jpeg,*.png,*.jpg)|*.bmp;*.jpeg;*.png;*.jpg";
 				 openFileDialog1->ShowDialog();
 				 map_location=openFileDialog1->FileName;
 				 map->ImageLocation=map_location;
@@ -800,6 +827,10 @@ private: System::Void sell_Load(System::Object^  sender, System::EventArgs^  e) 
 			 image_location="";
 			 floor_plan_location="";
 			 map_location="";
+		 }
+private: System::Void label12_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void image_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

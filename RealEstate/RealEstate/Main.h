@@ -548,7 +548,19 @@ private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e)
 				 if(city->Text!="" && city->Text!="City")
 				 {
 					 Buy_form^ f3;
-					 f3 = gcnew Buy_form(city->Text,this);
+					 f3 = gcnew Buy_form(city->Text,this,"Sell");
+					 f3->Show();
+					 this->Hide();
+				 }
+				 else
+					 MessageBox::Show("Enter your city first.");
+			 }
+			 if(rental->Checked==true)
+			 {
+				 if(city->Text!="" && city->Text!="City")
+				 {
+					 Buy_form^ f3;
+					 f3 = gcnew Buy_form(city->Text,this,"Rent");
 					 f3->Show();
 					 this->Hide();
 				 }

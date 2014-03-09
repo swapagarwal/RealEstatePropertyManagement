@@ -1,6 +1,7 @@
 #pragma once
 #include "Database.h"
 #include <math.h>
+#include "view_details.h"
 namespace RealEstate {
 
 	using namespace System;
@@ -88,7 +89,8 @@ namespace RealEstate {
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label16;
 	private: System::Windows::Forms::Label^  label17;
-	private: System::Windows::Forms::Button^  view_details;
+	private: System::Windows::Forms::Button^  view_detail;
+
 
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Panel^  panel6;
@@ -279,7 +281,7 @@ namespace RealEstate {
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->view_details = (gcnew System::Windows::Forms::Button());
+			this->view_detail = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->mydetails = (gcnew System::Windows::Forms::TabPage());
@@ -389,7 +391,7 @@ namespace RealEstate {
 			this->panel7->Controls->Add(this->pictureBox5);
 			this->panel7->Location = System::Drawing::Point(97, 761);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(654, 143);
+			this->panel7->Size = System::Drawing::Size(620, 143);
 			this->panel7->TabIndex = 16;
 			// 
 			// label46
@@ -411,7 +413,7 @@ namespace RealEstate {
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(495, 72);
+			this->button9->Location = System::Drawing::Point(461, 72);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(136, 29);
 			this->button9->TabIndex = 8;
@@ -492,12 +494,13 @@ namespace RealEstate {
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(495, 25);
+			this->button10->Location = System::Drawing::Point(461, 25);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(136, 29);
 			this->button10->TabIndex = 1;
 			this->button10->Text = L"View Details";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &profile::button10_Click);
 			// 
 			// pictureBox5
 			// 
@@ -529,7 +532,7 @@ namespace RealEstate {
 			this->panel6->Controls->Add(this->pictureBox4);
 			this->panel6->Location = System::Drawing::Point(97, 584);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(654, 143);
+			this->panel6->Size = System::Drawing::Size(620, 143);
 			this->panel6->TabIndex = 15;
 			// 
 			// label45
@@ -551,7 +554,7 @@ namespace RealEstate {
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(495, 72);
+			this->button7->Location = System::Drawing::Point(461, 72);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(136, 29);
 			this->button7->TabIndex = 8;
@@ -632,12 +635,13 @@ namespace RealEstate {
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(495, 25);
+			this->button8->Location = System::Drawing::Point(461, 25);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(136, 29);
 			this->button8->TabIndex = 1;
 			this->button8->Text = L"View Details";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &profile::button8_Click);
 			// 
 			// pictureBox4
 			// 
@@ -669,7 +673,7 @@ namespace RealEstate {
 			this->panel5->Controls->Add(this->pictureBox3);
 			this->panel5->Location = System::Drawing::Point(97, 403);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(654, 143);
+			this->panel5->Size = System::Drawing::Size(620, 143);
 			this->panel5->TabIndex = 15;
 			// 
 			// label44
@@ -691,7 +695,7 @@ namespace RealEstate {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(495, 72);
+			this->button5->Location = System::Drawing::Point(461, 72);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(136, 29);
 			this->button5->TabIndex = 8;
@@ -772,12 +776,13 @@ namespace RealEstate {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(495, 25);
+			this->button6->Location = System::Drawing::Point(461, 25);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(136, 29);
 			this->button6->TabIndex = 1;
 			this->button6->Text = L"View Details";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &profile::button6_Click);
 			// 
 			// pictureBox3
 			// 
@@ -809,7 +814,7 @@ namespace RealEstate {
 			this->panel4->Controls->Add(this->pictureBox2);
 			this->panel4->Location = System::Drawing::Point(97, 222);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(654, 143);
+			this->panel4->Size = System::Drawing::Size(620, 143);
 			this->panel4->TabIndex = 15;
 			// 
 			// label43
@@ -831,7 +836,7 @@ namespace RealEstate {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(495, 72);
+			this->button3->Location = System::Drawing::Point(461, 72);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(136, 29);
 			this->button3->TabIndex = 8;
@@ -912,12 +917,13 @@ namespace RealEstate {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(495, 25);
+			this->button4->Location = System::Drawing::Point(461, 25);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(136, 29);
 			this->button4->TabIndex = 1;
 			this->button4->Text = L"View Details";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &profile::button4_Click);
 			// 
 			// pictureBox2
 			// 
@@ -945,11 +951,11 @@ namespace RealEstate {
 			this->panel3->Controls->Add(this->label15);
 			this->panel3->Controls->Add(this->label16);
 			this->panel3->Controls->Add(this->label17);
-			this->panel3->Controls->Add(this->view_details);
+			this->panel3->Controls->Add(this->view_detail);
 			this->panel3->Controls->Add(this->pictureBox1);
 			this->panel3->Location = System::Drawing::Point(97, 56);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(654, 143);
+			this->panel3->Size = System::Drawing::Size(620, 143);
 			this->panel3->TabIndex = 14;
 			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &profile::panel3_Paint);
 			// 
@@ -972,7 +978,7 @@ namespace RealEstate {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(495, 72);
+			this->button2->Location = System::Drawing::Point(461, 72);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(136, 29);
 			this->button2->TabIndex = 8;
@@ -1045,20 +1051,21 @@ namespace RealEstate {
 			this->label17->TabIndex = 2;
 			this->label17->Text = L"Address:";
 			// 
-			// view_details
+			// view_detail
 			// 
-			this->view_details->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->view_details->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->view_details->FlatAppearance->BorderSize = 0;
-			this->view_details->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->view_details->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->view_detail->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->view_detail->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->view_detail->FlatAppearance->BorderSize = 0;
+			this->view_detail->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->view_detail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->view_details->Location = System::Drawing::Point(495, 25);
-			this->view_details->Name = L"view_details";
-			this->view_details->Size = System::Drawing::Size(136, 29);
-			this->view_details->TabIndex = 1;
-			this->view_details->Text = L"View Details";
-			this->view_details->UseVisualStyleBackColor = true;
+			this->view_detail->Location = System::Drawing::Point(461, 25);
+			this->view_detail->Name = L"view_detail";
+			this->view_detail->Size = System::Drawing::Size(136, 29);
+			this->view_detail->TabIndex = 1;
+			this->view_detail->Text = L"View Details";
+			this->view_detail->UseVisualStyleBackColor = true;
+			this->view_detail->Click += gcnew System::EventHandler(this, &profile::view_detail_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1668,5 +1675,35 @@ namespace RealEstate {
 				 }
 				 else this->panel7->Hide();
 			 }
+private: System::Void view_detail_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[1+5*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[2+5*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[3+5*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[4+5*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[5+5*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
 };
 }

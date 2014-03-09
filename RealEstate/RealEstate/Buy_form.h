@@ -1,6 +1,7 @@
 #pragma once
-#include "Database.h";
+#include "Database.h"
 #include <math.h>
+#include "view_details.h"
 namespace RealEstate {
 
 	using namespace System;
@@ -18,7 +19,8 @@ namespace RealEstate {
 	public:
 		Form^ previous;
 		String^ cityname;
-		Buy_form(String^ c,Form^ f)
+		String^ sell_rent;
+		Buy_form(String^ c,Form^ f,String^ sr)
 		{
 			InitializeComponent();
 			//
@@ -26,6 +28,7 @@ namespace RealEstate {
 			//
 			previous=f;
 			cityname=c;
+			sell_rent=sr;
 		}
 		array<Int64>^ ids;
 		int pageno,totalpages;
@@ -631,6 +634,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button18->TabIndex = 1;
 			this->button18->Text = L"View Details";
 			this->button18->UseVisualStyleBackColor = true;
+			this->button18->Click += gcnew System::EventHandler(this, &Buy_form::button18_Click);
 			// 
 			// pictureBox10
 			// 
@@ -759,6 +763,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button16->TabIndex = 1;
 			this->button16->Text = L"View Details";
 			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &Buy_form::button16_Click);
 			// 
 			// pictureBox9
 			// 
@@ -887,6 +892,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button14->TabIndex = 1;
 			this->button14->Text = L"View Details";
 			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &Buy_form::button14_Click);
 			// 
 			// pictureBox8
 			// 
@@ -1015,6 +1021,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button12->TabIndex = 1;
 			this->button12->Text = L"View Details";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &Buy_form::button12_Click);
 			// 
 			// pictureBox7
 			// 
@@ -1143,6 +1150,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button10->TabIndex = 1;
 			this->button10->Text = L"View Details";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &Buy_form::button10_Click);
 			// 
 			// pictureBox6
 			// 
@@ -1271,6 +1279,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button8->TabIndex = 1;
 			this->button8->Text = L"View Details";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &Buy_form::button8_Click);
 			// 
 			// pictureBox5
 			// 
@@ -1399,6 +1408,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button6->TabIndex = 1;
 			this->button6->Text = L"View Details";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Buy_form::button6_Click);
 			// 
 			// pictureBox4
 			// 
@@ -1527,6 +1537,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button4->TabIndex = 1;
 			this->button4->Text = L"View Details";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Buy_form::button4_Click);
 			// 
 			// pictureBox3
 			// 
@@ -1655,6 +1666,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"View Details";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Buy_form::button2_Click);
 			// 
 			// pictureBox2
 			// 
@@ -1783,6 +1795,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->details->TabIndex = 1;
 			this->details->Text = L"View Details";
 			this->details->UseVisualStyleBackColor = true;
+			this->details->Click += gcnew System::EventHandler(this, &Buy_form::details_Click);
 			// 
 			// pictureBox1
 			// 
@@ -2157,7 +2170,7 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
 			};
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -2222,72 +2235,46 @@ private: System::Void button21_Click(System::Object^  sender, System::EventArgs^
 			 display(pageno);
 		 }
 private: System::Void button19_Click(System::Object^  sender, System::EventArgs^  e) {
-			 if(Convert::ToInt32(textBox1->Text)<0 && Convert::ToInt32(textBox1->Text)>2147483647)
-			 {
-				 //MessageBox::Show(textBox1->Text);
-				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
-			 }
-			 else if(Convert::ToInt32(textBox2->Text)<0 && Convert::ToInt32(textBox2->Text)>2147483647)
-			 {
-				 //MessageBox::Show(textBox2->Text);
-				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
-			 }
-			 else
-			 {
-				 props=gcnew array<String^> {
-					 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
-				 };
-				 ids=gcnew array<Int64>(1000);
-				 ids=db.search(props);
-				 prop_details=gcnew array<String^>(16);
-				 //MessageBox::Show(ids[0]);
-				 totalpages=ceil(ids[0]/10.0);
-				 pageno=1;
-				 //MessageBox::Show(Convert::ToString(totalpages));
-				 comboBox1->BeginUpdate();
-				 comboBox1->Items->Clear();
-				 for ( int i = 1; i <= totalpages; i++ )
-				 {
-					 comboBox1->Items->Add(i);
-				 }
-				 comboBox1->EndUpdate();
-				 comboBox1->Text=Convert::ToString(pageno);
-				 display(pageno);
-			 }
+			props=gcnew array<String^> {
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+			};
+			ids=gcnew array<Int64>(1000);
+			ids=db.search(props);
+			prop_details=gcnew array<String^>(16);
+			//MessageBox::Show(ids[0]);
+			totalpages=ceil(ids[0]/10.0);
+			pageno=1;
+			//MessageBox::Show(Convert::ToString(totalpages));
+			comboBox1->BeginUpdate();
+			comboBox1->Items->Clear();
+			for ( int i = 1; i <= totalpages; i++ )
+			{
+				comboBox1->Items->Add(i);
+			}
+			comboBox1->EndUpdate();
+			comboBox1->Text=Convert::ToString(pageno);
+			display(pageno);
 		 }
 private: System::Void button20_Click(System::Object^  sender, System::EventArgs^  e) {
-			 if(Convert::ToInt32(textBox4->Text)<0 && Convert::ToInt32(textBox4->Text)>2147483647)
-			 {
-				 //MessageBox::Show(textBox4->Text);
-				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
-			 }
-			 else if(Convert::ToInt32(textBox3->Text)<0 && Convert::ToInt32(textBox3->Text)>2147483647)
-			 {
-				 //MessageBox::Show(textBox3->Text);
-				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
-			 }
-			 else
-			 {
-				 props=gcnew array<String^> {
-					 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
-				 };
-				 ids=gcnew array<Int64>(1000);
-				 ids=db.search(props);
-				 prop_details=gcnew array<String^>(16);
-				 //MessageBox::Show(ids[0]);
-				 totalpages=ceil(ids[0]/10.0);
-				 pageno=1;
-				 //MessageBox::Show(Convert::ToString(totalpages));
-				 comboBox1->BeginUpdate();
-				 comboBox1->Items->Clear();
-				 for ( int i = 1; i <= totalpages; i++ )
-				 {
-					 comboBox1->Items->Add(i);
-				 }
-				 comboBox1->EndUpdate();
-				 comboBox1->Text=Convert::ToString(pageno);
-				 display(pageno);
-			 }
+			props=gcnew array<String^> {
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+			};
+			ids=gcnew array<Int64>(1000);
+			ids=db.search(props);
+			prop_details=gcnew array<String^>(16);
+			//MessageBox::Show(ids[0]);
+			totalpages=ceil(ids[0]/10.0);
+			pageno=1;
+			//MessageBox::Show(Convert::ToString(totalpages));
+			comboBox1->BeginUpdate();
+			comboBox1->Items->Clear();
+			for ( int i = 1; i <= totalpages; i++ )
+			{
+				comboBox1->Items->Add(i);
+			}
+			comboBox1->EndUpdate();
+			comboBox1->Text=Convert::ToString(pageno);
+			display(pageno);
 		 }
 private: System::Void display(int pageno) {
 			 if(ids[1+10*(pageno-1)]!=-1){
@@ -2427,7 +2414,7 @@ private: System::Void filter_by_bhk() {
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+				 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -2445,6 +2432,66 @@ private: System::Void filter_by_bhk() {
 			 comboBox1->EndUpdate();
 			 comboBox1->Text=Convert::ToString(pageno);
 			 display(pageno);
+		 }
+private: System::Void details_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[1+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[2+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[3+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[4+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[5+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[6+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[7+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button14_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[8+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button16_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[9+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
+		 }
+private: System::Void button18_Click(System::Object^  sender, System::EventArgs^  e) {
+			 prop_details=db.get_property_details(ids[10+10*(pageno-1)]);
+			 view_details^ v;
+			 v = gcnew view_details(prop_details);
+			 v->Show();
 		 }
 };
 }
