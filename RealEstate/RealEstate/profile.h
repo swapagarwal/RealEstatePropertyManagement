@@ -87,7 +87,7 @@ namespace RealEstate {
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
-	private: System::Windows::Forms::Label^  label16;
+
 	private: System::Windows::Forms::Label^  label17;
 	private: System::Windows::Forms::Button^  view_detail;
 
@@ -99,7 +99,7 @@ namespace RealEstate {
 	private: System::Windows::Forms::Label^  label31;
 	private: System::Windows::Forms::Label^  label32;
 	private: System::Windows::Forms::Label^  label33;
-	private: System::Windows::Forms::Label^  label34;
+
 	private: System::Windows::Forms::Label^  label35;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
@@ -109,7 +109,7 @@ namespace RealEstate {
 	private: System::Windows::Forms::Label^  label25;
 	private: System::Windows::Forms::Label^  label26;
 	private: System::Windows::Forms::Label^  label27;
-	private: System::Windows::Forms::Label^  label28;
+
 	private: System::Windows::Forms::Label^  label29;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
@@ -119,25 +119,25 @@ namespace RealEstate {
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::Label^  label21;
-	private: System::Windows::Forms::Label^  label22;
+
 	private: System::Windows::Forms::Label^  label23;
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Panel^  panel7;
-	private: System::Windows::Forms::Label^  label46;
+
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Label^  label36;
 	private: System::Windows::Forms::Label^  label37;
 	private: System::Windows::Forms::Label^  label38;
 	private: System::Windows::Forms::Label^  label39;
-	private: System::Windows::Forms::Label^  label40;
+
 	private: System::Windows::Forms::Label^  label41;
 	private: System::Windows::Forms::Button^  button10;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
-	private: System::Windows::Forms::Label^  label45;
-	private: System::Windows::Forms::Label^  label44;
-	private: System::Windows::Forms::Label^  label43;
-	private: System::Windows::Forms::Label^  label42;
+
+
+
+
 	private: System::Windows::Forms::TabPage^  mydetails;
 
 	private: System::Windows::Forms::TextBox^  new_pass;
@@ -229,57 +229,47 @@ namespace RealEstate {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->label46 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->label41 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->label45 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
-			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label43 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label42 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->view_detail = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -379,31 +369,18 @@ namespace RealEstate {
 			this->panel7->AutoScroll = true;
 			this->panel7->BackColor = System::Drawing::Color::White;
 			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel7->Controls->Add(this->label46);
 			this->panel7->Controls->Add(this->button9);
 			this->panel7->Controls->Add(this->label36);
 			this->panel7->Controls->Add(this->label37);
 			this->panel7->Controls->Add(this->label38);
 			this->panel7->Controls->Add(this->label39);
-			this->panel7->Controls->Add(this->label40);
 			this->panel7->Controls->Add(this->label41);
 			this->panel7->Controls->Add(this->button10);
 			this->panel7->Controls->Add(this->pictureBox5);
 			this->panel7->Location = System::Drawing::Point(97, 761);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(603, 143);
+			this->panel7->Size = System::Drawing::Size(586, 143);
 			this->panel7->TabIndex = 16;
-			// 
-			// label46
-			// 
-			this->label46->AutoSize = true;
-			this->label46->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label46->Location = System::Drawing::Point(402, 59);
-			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(55, 16);
-			this->label46->TabIndex = 13;
-			this->label46->Text = L"sell/rent";
 			// 
 			// button9
 			// 
@@ -413,7 +390,7 @@ namespace RealEstate {
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(444, 72);
+			this->button9->Location = System::Drawing::Point(427, 72);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(136, 29);
 			this->button9->TabIndex = 8;
@@ -465,17 +442,6 @@ namespace RealEstate {
 			this->label39->TabIndex = 4;
 			this->label39->Text = L"BHK:";
 			// 
-			// label40
-			// 
-			this->label40->AutoSize = true;
-			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label40->Location = System::Drawing::Point(209, 59);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(119, 16);
-			this->label40->TabIndex = 3;
-			this->label40->Text = L"Builder/Residency";
-			// 
 			// label41
 			// 
 			this->label41->AutoSize = true;
@@ -495,7 +461,7 @@ namespace RealEstate {
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(444, 25);
+			this->button10->Location = System::Drawing::Point(427, 25);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(136, 29);
 			this->button10->TabIndex = 1;
@@ -521,31 +487,18 @@ namespace RealEstate {
 			this->panel6->AutoScroll = true;
 			this->panel6->BackColor = System::Drawing::Color::White;
 			this->panel6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel6->Controls->Add(this->label45);
 			this->panel6->Controls->Add(this->button7);
 			this->panel6->Controls->Add(this->label30);
 			this->panel6->Controls->Add(this->label31);
 			this->panel6->Controls->Add(this->label32);
 			this->panel6->Controls->Add(this->label33);
-			this->panel6->Controls->Add(this->label34);
 			this->panel6->Controls->Add(this->label35);
 			this->panel6->Controls->Add(this->button8);
 			this->panel6->Controls->Add(this->pictureBox4);
 			this->panel6->Location = System::Drawing::Point(97, 584);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(603, 143);
+			this->panel6->Size = System::Drawing::Size(586, 143);
 			this->panel6->TabIndex = 15;
-			// 
-			// label45
-			// 
-			this->label45->AutoSize = true;
-			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label45->Location = System::Drawing::Point(402, 59);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(55, 16);
-			this->label45->TabIndex = 12;
-			this->label45->Text = L"sell/rent";
 			// 
 			// button7
 			// 
@@ -555,7 +508,7 @@ namespace RealEstate {
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(444, 72);
+			this->button7->Location = System::Drawing::Point(427, 72);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(136, 29);
 			this->button7->TabIndex = 8;
@@ -607,17 +560,6 @@ namespace RealEstate {
 			this->label33->TabIndex = 4;
 			this->label33->Text = L"BHK:";
 			// 
-			// label34
-			// 
-			this->label34->AutoSize = true;
-			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label34->Location = System::Drawing::Point(209, 59);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(119, 16);
-			this->label34->TabIndex = 3;
-			this->label34->Text = L"Builder/Residency";
-			// 
 			// label35
 			// 
 			this->label35->AutoSize = true;
@@ -637,7 +579,7 @@ namespace RealEstate {
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(444, 25);
+			this->button8->Location = System::Drawing::Point(427, 25);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(136, 29);
 			this->button8->TabIndex = 1;
@@ -663,31 +605,18 @@ namespace RealEstate {
 			this->panel5->AutoScroll = true;
 			this->panel5->BackColor = System::Drawing::Color::White;
 			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel5->Controls->Add(this->label44);
 			this->panel5->Controls->Add(this->button5);
 			this->panel5->Controls->Add(this->label24);
 			this->panel5->Controls->Add(this->label25);
 			this->panel5->Controls->Add(this->label26);
 			this->panel5->Controls->Add(this->label27);
-			this->panel5->Controls->Add(this->label28);
 			this->panel5->Controls->Add(this->label29);
 			this->panel5->Controls->Add(this->button6);
 			this->panel5->Controls->Add(this->pictureBox3);
 			this->panel5->Location = System::Drawing::Point(97, 403);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(603, 143);
+			this->panel5->Size = System::Drawing::Size(586, 143);
 			this->panel5->TabIndex = 15;
-			// 
-			// label44
-			// 
-			this->label44->AutoSize = true;
-			this->label44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label44->Location = System::Drawing::Point(402, 59);
-			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(55, 16);
-			this->label44->TabIndex = 11;
-			this->label44->Text = L"sell/rent";
 			// 
 			// button5
 			// 
@@ -697,7 +626,7 @@ namespace RealEstate {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(444, 72);
+			this->button5->Location = System::Drawing::Point(427, 72);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(136, 29);
 			this->button5->TabIndex = 8;
@@ -749,17 +678,6 @@ namespace RealEstate {
 			this->label27->TabIndex = 4;
 			this->label27->Text = L"BHK:";
 			// 
-			// label28
-			// 
-			this->label28->AutoSize = true;
-			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(209, 59);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(119, 16);
-			this->label28->TabIndex = 3;
-			this->label28->Text = L"Builder/Residency";
-			// 
 			// label29
 			// 
 			this->label29->AutoSize = true;
@@ -779,7 +697,7 @@ namespace RealEstate {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(444, 25);
+			this->button6->Location = System::Drawing::Point(427, 25);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(136, 29);
 			this->button6->TabIndex = 1;
@@ -805,31 +723,18 @@ namespace RealEstate {
 			this->panel4->AutoScroll = true;
 			this->panel4->BackColor = System::Drawing::Color::White;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel4->Controls->Add(this->label43);
 			this->panel4->Controls->Add(this->button3);
 			this->panel4->Controls->Add(this->label18);
 			this->panel4->Controls->Add(this->label19);
 			this->panel4->Controls->Add(this->label20);
 			this->panel4->Controls->Add(this->label21);
-			this->panel4->Controls->Add(this->label22);
 			this->panel4->Controls->Add(this->label23);
 			this->panel4->Controls->Add(this->button4);
 			this->panel4->Controls->Add(this->pictureBox2);
 			this->panel4->Location = System::Drawing::Point(97, 222);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(603, 143);
+			this->panel4->Size = System::Drawing::Size(586, 143);
 			this->panel4->TabIndex = 15;
-			// 
-			// label43
-			// 
-			this->label43->AutoSize = true;
-			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label43->Location = System::Drawing::Point(402, 59);
-			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(55, 16);
-			this->label43->TabIndex = 10;
-			this->label43->Text = L"sell/rent";
 			// 
 			// button3
 			// 
@@ -839,7 +744,7 @@ namespace RealEstate {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(444, 72);
+			this->button3->Location = System::Drawing::Point(427, 72);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(136, 29);
 			this->button3->TabIndex = 8;
@@ -891,17 +796,6 @@ namespace RealEstate {
 			this->label21->TabIndex = 4;
 			this->label21->Text = L"BHK:";
 			// 
-			// label22
-			// 
-			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(209, 59);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(119, 16);
-			this->label22->TabIndex = 3;
-			this->label22->Text = L"Builder/Residency";
-			// 
 			// label23
 			// 
 			this->label23->AutoSize = true;
@@ -921,7 +815,7 @@ namespace RealEstate {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(444, 25);
+			this->button4->Location = System::Drawing::Point(427, 25);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(136, 29);
 			this->button4->TabIndex = 1;
@@ -947,32 +841,19 @@ namespace RealEstate {
 			this->panel3->AutoScroll = true;
 			this->panel3->BackColor = System::Drawing::Color::White;
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel3->Controls->Add(this->label42);
 			this->panel3->Controls->Add(this->button2);
 			this->panel3->Controls->Add(this->label12);
 			this->panel3->Controls->Add(this->label13);
 			this->panel3->Controls->Add(this->label14);
 			this->panel3->Controls->Add(this->label15);
-			this->panel3->Controls->Add(this->label16);
 			this->panel3->Controls->Add(this->label17);
 			this->panel3->Controls->Add(this->view_detail);
 			this->panel3->Controls->Add(this->pictureBox1);
 			this->panel3->Location = System::Drawing::Point(97, 56);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(603, 143);
+			this->panel3->Size = System::Drawing::Size(586, 143);
 			this->panel3->TabIndex = 14;
 			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &profile::panel3_Paint);
-			// 
-			// label42
-			// 
-			this->label42->AutoSize = true;
-			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label42->Location = System::Drawing::Point(402, 59);
-			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(55, 16);
-			this->label42->TabIndex = 9;
-			this->label42->Text = L"sell/rent";
 			// 
 			// button2
 			// 
@@ -982,7 +863,7 @@ namespace RealEstate {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(444, 72);
+			this->button2->Location = System::Drawing::Point(427, 72);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(136, 29);
 			this->button2->TabIndex = 8;
@@ -1034,17 +915,6 @@ namespace RealEstate {
 			this->label15->TabIndex = 4;
 			this->label15->Text = L"BHK:";
 			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label16->Location = System::Drawing::Point(209, 59);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(119, 16);
-			this->label16->TabIndex = 3;
-			this->label16->Text = L"Builder/Residency";
-			// 
 			// label17
 			// 
 			this->label17->AutoSize = true;
@@ -1064,7 +934,7 @@ namespace RealEstate {
 			this->view_detail->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->view_detail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->view_detail->Location = System::Drawing::Point(444, 25);
+			this->view_detail->Location = System::Drawing::Point(427, 25);
 			this->view_detail->Name = L"view_detail";
 			this->view_detail->Size = System::Drawing::Size(136, 29);
 			this->view_detail->TabIndex = 1;
@@ -1515,7 +1385,7 @@ namespace RealEstate {
 				 city->Text = details[6];
 
 				 props=gcnew array<String^> {
-					 "","","","","","","","","","",details[1],"","","","","","",""
+					 "","","","","","","","","","",details[1],"","","","","","","",""
 				 };
 				 ids=gcnew array<Int64>(1000);
 				 ids=db.search(props);
@@ -1714,7 +1584,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 			 db.delete_by_id(ids[1+5*(pageno-1)]);
 
 			 props=gcnew array<String^> {
-				 "","","","","","","","","","",details[1],"","","","","","",""
+				 "","","","","","","","","","",details[1],"","","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -1724,6 +1594,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);
@@ -1736,7 +1607,7 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 			 db.delete_by_id(ids[2+5*(pageno-1)]);
 
 			 props=gcnew array<String^> {
-				 "","","","","","","","","","",details[1],"","","","","","",""
+				 "","","","","","","","","","",details[1],"","","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -1746,6 +1617,7 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);
@@ -1758,7 +1630,7 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 			 db.delete_by_id(ids[3+5*(pageno-1)]);
 
 			 props=gcnew array<String^> {
-				 "","","","","","","","","","",details[1],"","","","","","",""
+				 "","","","","","","","","","",details[1],"","","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -1768,6 +1640,7 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);
@@ -1780,7 +1653,7 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 			 db.delete_by_id(ids[4+5*(pageno-1)]);
 
 			 props=gcnew array<String^> {
-				 "","","","","","","","","","",details[1],"","","","","","",""
+				 "","","","","","","","","","",details[1],"","","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -1790,6 +1663,7 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);
@@ -1802,7 +1676,7 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 			 db.delete_by_id(ids[5+5*(pageno-1)]);
 
 			 props=gcnew array<String^> {
-				 "","","","","","","","","","",details[1],"","","","","","",""
+				 "","","","","","","","","","",details[1],"","","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -1812,6 +1686,7 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 			 pageno=1;
 			 //MessageBox::Show(Convert::ToString(totalpages));
 			 comboBox1->BeginUpdate();
+			 comboBox1->Items->Clear();
 			 for ( int i = 1; i <= totalpages; i++ )
 			 {
 				 comboBox1->Items->Add(i);

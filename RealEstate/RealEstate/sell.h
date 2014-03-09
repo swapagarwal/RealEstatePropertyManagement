@@ -19,6 +19,7 @@ namespace RealEstate {
 		String^ username;
 		String^ sell_rent;
 		String^ sell_name;
+		String^ sell_contact;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::DateTimePicker^  calendar;
 	private: System::Windows::Forms::PictureBox^  map;
@@ -36,7 +37,7 @@ namespace RealEstate {
 	public: 
 
 		Form^ previous;
-		sell(String^ c, String^ u,String^s, Form^ f,String^ n)
+		sell(String^ c, String^ u,String^s, Form^ f,String^ n,String^ con)
 		{
 			InitializeComponent();
 			cityname=c;
@@ -44,6 +45,7 @@ namespace RealEstate {
 			sell_rent=s;
 			previous=f;
 			sell_name=n;
+			sell_contact=con;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -427,7 +429,7 @@ namespace RealEstate {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Corbel", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(1189, 806);
+			this->button1->Location = System::Drawing::Point(1228, 781);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(80, 39);
 			this->button1->TabIndex = 24;
@@ -623,9 +625,9 @@ namespace RealEstate {
 			// 
 			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(565, 44);
+			this->pictureBox1->Location = System::Drawing::Point(580, 44);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(734, 519);
+			this->pictureBox1->Size = System::Drawing::Size(685, 519);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
@@ -635,6 +637,7 @@ namespace RealEstate {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
+			this->AutoScrollMargin = System::Drawing::Size(10, 10);
 			this->AutoScrollMinSize = System::Drawing::Size(1, 1);
 			this->AutoSize = true;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
@@ -672,8 +675,10 @@ namespace RealEstate {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->address);
 			this->Controls->Add(this->label3);
+			this->MinimizeBox = false;
 			this->Name = L"sell";
 			this->Text = L"sell";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &sell::sell_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &sell::sell_Load);
 			this->groupBox1->ResumeLayout(false);
@@ -743,7 +748,7 @@ namespace RealEstate {
 					 {
 						 if(rand_1->Text!="" && rand_2->Text!="")
 						 {
-							 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text,sell_name};
+							 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,rand_2->Text,"Flat",desc->Text,rand_1->Text,"",age->Text,calendar->Text,sell_name,contact->Text};
 							 db.properties(details);
 							 this->Close();
 							 previous->Show();
@@ -753,7 +758,7 @@ namespace RealEstate {
 					 }
 					 else if(radioButton5->Checked==true)
 					 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Plot",desc->Text,"","",age->Text,calendar->Text,sell_name};
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Plot",desc->Text,"","",age->Text,calendar->Text,sell_name,contact->Text};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();
@@ -762,7 +767,7 @@ namespace RealEstate {
 					 {
 						 if(rand_1->Text!="")
 						 {
-						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text,sell_name};
+						 array<String^>^ details={address->Text,cityname,area->Text,price->Text,sell_rent,image_location,floor_plan_location,map_location,username,"0","Apartment",desc->Text,"",rand_1->Text,age->Text,calendar->Text,sell_name,contact->Text};
 						 db.properties(details);
 						 this->Close();
 						 previous->Show();

@@ -59,21 +59,21 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 	 }
 	 void Database:: properties(array<String^>^ columns) // Function to add entries to the properties table. Send an array of Strings as parameter. If some column is to be left blank, then send "" instead.
 	 {
-		 array<String^>^ names={"address","city","area","price","sell_rent","image_path","floor_plan","map","username","bhk","type","decription","floor_number","total_floors","age","available_from","name"};
+		 array<String^>^ names={"address","city","area","price","sell_rent","image_path","floor_plan","map","username","bhk","type","decription","floor_number","total_floors","age","available_from","name","contact"};
 		 String^ s="INSERT into repm.properties(";
-		 for(int i=0;i<17;i++)
+		 for(int i=0;i<18;i++)
 		 {
 			 s=s+"`"+names[i]+"`";
-			 if(i!=16)
+			 if(i!=17)
 				 s=s+",";
 			 else
 				 s=s+")";
 		 }
 		 s=s+"VALUES(";
-		 for(int i=0;i<17;i++)
+		 for(int i=0;i<18;i++)
 		 {
 			 s=s+"'"+columns[i]+"'";
-			 if(i!=16)
+			 if(i!=17)
 				 s=s+",";
 			 else
 				 s=s+")";
@@ -93,12 +93,19 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 }
 	 }
 	  array< Int64 >^ Database::search(array<String^>^ props) // Function to search for an entry in properties table. Send the parameters as array. "" should be send in place of those filters which are not to be included in search
-	 {														// This Function returns an Int32 array containing the ids of the resultant rows.	
+	 {														// This Function returns an Int32 array containing the ids of the resultant rows.
+		 String^ query;
+		if(props[10]=="admin")
+		{
+			query="SELECT * From repm.properties";
+		}
+		else
+		{
 		 array<String^>^ names={"address","city","area","price","sell_rent","image_path","floor_plan","map","username","bhk","type","decription","floor_number","total_floors","age","available_from","name"};
-		 String^ query="SELECT * From repm.properties WHERE ";
+		 query="SELECT * From repm.properties WHERE ";
 		int count=0;
 		int k=0;
-		 for(int i=0;i<18;i++)
+		 for(int i=0;i<19;i++)
 		 {
 			 if(props[i]!="" )
 			 {
@@ -169,8 +176,9 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 					  --k;
 			 }
 		 }
+		 }
 		 query=query+";";
-		 MessageBox::Show(query);
+		 //MessageBox::Show(query);
 		 MySqlCommand^ cmd=gcnew MySqlCommand(query,connection);
 		 MySqlCommand^ rows=gcnew MySqlCommand("SELECT Found_Rows()",connection);
 		 MySqlDataReader^ mydata;
@@ -194,7 +202,7 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 for(i=1;mydata->Read();++i)
 				 ids[i]=mydata->GetInt64(0);
 			 ids[0]=i-1;
-			 MessageBox::Show(Convert::ToString(i-1));
+			 //MessageBox::Show(Convert::ToString(i-1));
 		 }
 		 catch (Exception^ ex)
 		 {
@@ -231,13 +239,13 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 String^ s="Select * From repm.properties where id='"+id+"';";
 		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
 		 MySqlDataReader^ mydata;
-		 array<String^>^ details=gcnew array<String^>(18);
+		 array<String^>^ details=gcnew array<String^>(19);
 		 try
 		 {
 			 cmd->Connection->Open();
 			 mydata=cmd->ExecuteReader();
 			 mydata->Read();
-			 for(int i=0;i<18;i++)
+			 for(int i=0;i<19;i++)
 				 details[i]=mydata->GetString(i);
 		 }
 		 catch(Exception^ ex)

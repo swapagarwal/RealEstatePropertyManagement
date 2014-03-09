@@ -575,9 +575,9 @@ private: System::Void go_Click(System::Object^  sender, System::EventArgs^  e)
 					 {
 						 sell^ f2;
 						 if(Sell->Checked==true)
-							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this,details[3]);
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Sell",this,details[3],details[5]);
 						 else
-							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this,details[3]);
+							 f2 = gcnew sell(city->Text,linkLabel1->Text,"Rent",this,details[3],details[5]);
 						 f2->Show();
 						 this->Hide();
 					 }

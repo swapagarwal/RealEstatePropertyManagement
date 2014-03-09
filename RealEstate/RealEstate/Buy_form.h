@@ -19,7 +19,7 @@ namespace RealEstate {
 	public:
 		Form^ previous;
 		String^ cityname;
-		String^ sell_rent;
+			 String^ sell_rent;
 		Buy_form(String^ c,Form^ f,String^ sr)
 		{
 			InitializeComponent();
@@ -38,6 +38,8 @@ namespace RealEstate {
 	public: 
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Button^  button21;
+	private: System::Windows::Forms::Button^  button22;
+	private: System::Windows::Forms::Label^  label69;
 			 array<String^>^ prop_details;
 	protected:
 		/// <summary>
@@ -63,102 +65,102 @@ namespace RealEstate {
 
 	private: System::Windows::Forms::Panel^  panel5;
 	private: System::Windows::Forms::Panel^  panel11;
-	private: System::Windows::Forms::Button^  button17;
+
 	private: System::Windows::Forms::Label^  label55;
 	private: System::Windows::Forms::Label^  label56;
 	private: System::Windows::Forms::Label^  label57;
 	private: System::Windows::Forms::Label^  label58;
-	private: System::Windows::Forms::Label^  label59;
+
 	private: System::Windows::Forms::Label^  label60;
 	private: System::Windows::Forms::Button^  button18;
 	private: System::Windows::Forms::PictureBox^  pictureBox10;
 	private: System::Windows::Forms::Panel^  panel10;
-	private: System::Windows::Forms::Button^  button15;
+
 	private: System::Windows::Forms::Label^  label49;
 	private: System::Windows::Forms::Label^  label50;
 	private: System::Windows::Forms::Label^  label51;
 	private: System::Windows::Forms::Label^  label52;
-	private: System::Windows::Forms::Label^  label53;
+
 	private: System::Windows::Forms::Label^  label54;
 	private: System::Windows::Forms::Button^  button16;
 	private: System::Windows::Forms::PictureBox^  pictureBox9;
 	private: System::Windows::Forms::Panel^  panel9;
-	private: System::Windows::Forms::Button^  button13;
+
 	private: System::Windows::Forms::Label^  label43;
 	private: System::Windows::Forms::Label^  label44;
 	private: System::Windows::Forms::Label^  label45;
 	private: System::Windows::Forms::Label^  label46;
-	private: System::Windows::Forms::Label^  label47;
+
 	private: System::Windows::Forms::Label^  label48;
 	private: System::Windows::Forms::Button^  button14;
 	private: System::Windows::Forms::PictureBox^  pictureBox8;
 	private: System::Windows::Forms::Panel^  panel8;
-	private: System::Windows::Forms::Button^  button11;
+
 	private: System::Windows::Forms::Label^  label37;
 	private: System::Windows::Forms::Label^  label38;
 	private: System::Windows::Forms::Label^  label39;
 	private: System::Windows::Forms::Label^  label40;
-	private: System::Windows::Forms::Label^  label41;
+
 	private: System::Windows::Forms::Label^  label42;
 	private: System::Windows::Forms::Button^  button12;
 	private: System::Windows::Forms::PictureBox^  pictureBox7;
 	private: System::Windows::Forms::Panel^  panel7;
-	private: System::Windows::Forms::Button^  button9;
+
 	private: System::Windows::Forms::Label^  label31;
 	private: System::Windows::Forms::Label^  label32;
 	private: System::Windows::Forms::Label^  label33;
 	private: System::Windows::Forms::Label^  label34;
-	private: System::Windows::Forms::Label^  label35;
+
 	private: System::Windows::Forms::Label^  label36;
 	private: System::Windows::Forms::Button^  button10;
 	private: System::Windows::Forms::PictureBox^  pictureBox6;
 	private: System::Windows::Forms::Panel^  panel6;
-	private: System::Windows::Forms::Button^  button7;
+
 	private: System::Windows::Forms::Label^  label25;
 	private: System::Windows::Forms::Label^  label26;
 	private: System::Windows::Forms::Label^  label27;
 	private: System::Windows::Forms::Label^  label28;
-	private: System::Windows::Forms::Label^  label29;
+
 	private: System::Windows::Forms::Label^  label30;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
 	private: System::Windows::Forms::Panel^  panel4;
-	private: System::Windows::Forms::Button^  button5;
+
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::Label^  label21;
 	private: System::Windows::Forms::Label^  label22;
-	private: System::Windows::Forms::Label^  label23;
+
 	private: System::Windows::Forms::Label^  label24;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
 	private: System::Windows::Forms::Panel^  panel3;
-	private: System::Windows::Forms::Button^  button3;
+
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label16;
-	private: System::Windows::Forms::Label^  label17;
+
 	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::Panel^  panel2;
-	private: System::Windows::Forms::Button^  button1;
+
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::Label^  label11;
+
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::Button^  contact;
+
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label2;
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  details;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
@@ -341,102 +343,82 @@ private: System::Windows::Forms::Label^  label73;
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Buy_form::typeid));
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
-			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->label56 = (gcnew System::Windows::Forms::Label());
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->label58 = (gcnew System::Windows::Forms::Label());
-			this->label59 = (gcnew System::Windows::Forms::Label());
 			this->label60 = (gcnew System::Windows::Forms::Label());
 			this->button18 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox10 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
-			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->label50 = (gcnew System::Windows::Forms::Label());
 			this->label51 = (gcnew System::Windows::Forms::Label());
 			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->label54 = (gcnew System::Windows::Forms::Label());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel9 = (gcnew System::Windows::Forms::Panel());
-			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->label43 = (gcnew System::Windows::Forms::Label());
 			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->label45 = (gcnew System::Windows::Forms::Label());
 			this->label46 = (gcnew System::Windows::Forms::Label());
-			this->label47 = (gcnew System::Windows::Forms::Label());
 			this->label48 = (gcnew System::Windows::Forms::Label());
 			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->label37 = (gcnew System::Windows::Forms::Label());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->label39 = (gcnew System::Windows::Forms::Label());
 			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->label41 = (gcnew System::Windows::Forms::Label());
 			this->label42 = (gcnew System::Windows::Forms::Label());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label34 = (gcnew System::Windows::Forms::Label());
-			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label28 = (gcnew System::Windows::Forms::Label());
-			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->contact = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->details = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -466,6 +448,8 @@ private: System::Windows::Forms::Label^  label73;
 			this->label63 = (gcnew System::Windows::Forms::Label());
 			this->label62 = (gcnew System::Windows::Forms::Label());
 			this->label61 = (gcnew System::Windows::Forms::Label());
+			this->label69 = (gcnew System::Windows::Forms::Label());
+			this->button22 = (gcnew System::Windows::Forms::Button());
 			this->panel5->SuspendLayout();
 			this->panel11->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox10))->BeginInit();
@@ -525,12 +509,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel11->AutoScroll = true;
 			this->panel11->BackColor = System::Drawing::Color::White;
 			this->panel11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel11->Controls->Add(this->button17);
 			this->panel11->Controls->Add(this->label55);
 			this->panel11->Controls->Add(this->label56);
 			this->panel11->Controls->Add(this->label57);
 			this->panel11->Controls->Add(this->label58);
-			this->panel11->Controls->Add(this->label59);
 			this->panel11->Controls->Add(this->label60);
 			this->panel11->Controls->Add(this->button18);
 			this->panel11->Controls->Add(this->pictureBox10);
@@ -538,21 +520,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel11->Name = L"panel11";
 			this->panel11->Size = System::Drawing::Size(676, 143);
 			this->panel11->TabIndex = 16;
-			// 
-			// button17
-			// 
-			this->button17->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button17->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button17->FlatAppearance->BorderSize = 0;
-			this->button17->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button17->Location = System::Drawing::Point(517, 59);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(136, 29);
-			this->button17->TabIndex = 8;
-			this->button17->Text = L"Contact Dealer";
-			this->button17->UseVisualStyleBackColor = true;
 			// 
 			// label55
 			// 
@@ -597,17 +564,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label58->Size = System::Drawing::Size(38, 16);
 			this->label58->TabIndex = 4;
 			this->label58->Text = L"BHK:";
-			// 
-			// label59
-			// 
-			this->label59->AutoSize = true;
-			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label59->Location = System::Drawing::Point(209, 59);
-			this->label59->Name = L"label59";
-			this->label59->Size = System::Drawing::Size(119, 16);
-			this->label59->TabIndex = 3;
-			this->label59->Text = L"Builder/Residency";
 			// 
 			// label60
 			// 
@@ -654,12 +610,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel10->AutoScroll = true;
 			this->panel10->BackColor = System::Drawing::Color::White;
 			this->panel10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel10->Controls->Add(this->button15);
 			this->panel10->Controls->Add(this->label49);
 			this->panel10->Controls->Add(this->label50);
 			this->panel10->Controls->Add(this->label51);
 			this->panel10->Controls->Add(this->label52);
-			this->panel10->Controls->Add(this->label53);
 			this->panel10->Controls->Add(this->label54);
 			this->panel10->Controls->Add(this->button16);
 			this->panel10->Controls->Add(this->pictureBox9);
@@ -667,21 +621,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel10->Name = L"panel10";
 			this->panel10->Size = System::Drawing::Size(676, 143);
 			this->panel10->TabIndex = 22;
-			// 
-			// button15
-			// 
-			this->button15->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button15->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button15->FlatAppearance->BorderSize = 0;
-			this->button15->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button15->Location = System::Drawing::Point(517, 59);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(136, 29);
-			this->button15->TabIndex = 8;
-			this->button15->Text = L"Contact Dealer";
-			this->button15->UseVisualStyleBackColor = true;
 			// 
 			// label49
 			// 
@@ -726,17 +665,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label52->Size = System::Drawing::Size(38, 16);
 			this->label52->TabIndex = 4;
 			this->label52->Text = L"BHK:";
-			// 
-			// label53
-			// 
-			this->label53->AutoSize = true;
-			this->label53->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label53->Location = System::Drawing::Point(209, 59);
-			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(119, 16);
-			this->label53->TabIndex = 3;
-			this->label53->Text = L"Builder/Residency";
 			// 
 			// label54
 			// 
@@ -783,12 +711,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel9->AutoScroll = true;
 			this->panel9->BackColor = System::Drawing::Color::White;
 			this->panel9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel9->Controls->Add(this->button13);
 			this->panel9->Controls->Add(this->label43);
 			this->panel9->Controls->Add(this->label44);
 			this->panel9->Controls->Add(this->label45);
 			this->panel9->Controls->Add(this->label46);
-			this->panel9->Controls->Add(this->label47);
 			this->panel9->Controls->Add(this->label48);
 			this->panel9->Controls->Add(this->button14);
 			this->panel9->Controls->Add(this->pictureBox8);
@@ -796,21 +722,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel9->Name = L"panel9";
 			this->panel9->Size = System::Drawing::Size(676, 143);
 			this->panel9->TabIndex = 18;
-			// 
-			// button13
-			// 
-			this->button13->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button13->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button13->FlatAppearance->BorderSize = 0;
-			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button13->Location = System::Drawing::Point(517, 59);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(136, 29);
-			this->button13->TabIndex = 8;
-			this->button13->Text = L"Contact Dealer";
-			this->button13->UseVisualStyleBackColor = true;
 			// 
 			// label43
 			// 
@@ -855,17 +766,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label46->Size = System::Drawing::Size(38, 16);
 			this->label46->TabIndex = 4;
 			this->label46->Text = L"BHK:";
-			// 
-			// label47
-			// 
-			this->label47->AutoSize = true;
-			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label47->Location = System::Drawing::Point(209, 59);
-			this->label47->Name = L"label47";
-			this->label47->Size = System::Drawing::Size(119, 16);
-			this->label47->TabIndex = 3;
-			this->label47->Text = L"Builder/Residency";
 			// 
 			// label48
 			// 
@@ -912,12 +812,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel8->AutoScroll = true;
 			this->panel8->BackColor = System::Drawing::Color::White;
 			this->panel8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel8->Controls->Add(this->button11);
 			this->panel8->Controls->Add(this->label37);
 			this->panel8->Controls->Add(this->label38);
 			this->panel8->Controls->Add(this->label39);
 			this->panel8->Controls->Add(this->label40);
-			this->panel8->Controls->Add(this->label41);
 			this->panel8->Controls->Add(this->label42);
 			this->panel8->Controls->Add(this->button12);
 			this->panel8->Controls->Add(this->pictureBox7);
@@ -925,21 +823,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(676, 143);
 			this->panel8->TabIndex = 19;
-			// 
-			// button11
-			// 
-			this->button11->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button11->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button11->FlatAppearance->BorderSize = 0;
-			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button11->Location = System::Drawing::Point(517, 59);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(136, 29);
-			this->button11->TabIndex = 8;
-			this->button11->Text = L"Contact Dealer";
-			this->button11->UseVisualStyleBackColor = true;
 			// 
 			// label37
 			// 
@@ -984,17 +867,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label40->Size = System::Drawing::Size(38, 16);
 			this->label40->TabIndex = 4;
 			this->label40->Text = L"BHK:";
-			// 
-			// label41
-			// 
-			this->label41->AutoSize = true;
-			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label41->Location = System::Drawing::Point(209, 59);
-			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(119, 16);
-			this->label41->TabIndex = 3;
-			this->label41->Text = L"Builder/Residency";
 			// 
 			// label42
 			// 
@@ -1041,12 +913,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel7->AutoScroll = true;
 			this->panel7->BackColor = System::Drawing::Color::White;
 			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel7->Controls->Add(this->button9);
 			this->panel7->Controls->Add(this->label31);
 			this->panel7->Controls->Add(this->label32);
 			this->panel7->Controls->Add(this->label33);
 			this->panel7->Controls->Add(this->label34);
-			this->panel7->Controls->Add(this->label35);
 			this->panel7->Controls->Add(this->label36);
 			this->panel7->Controls->Add(this->button10);
 			this->panel7->Controls->Add(this->pictureBox6);
@@ -1054,21 +924,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(676, 143);
 			this->panel7->TabIndex = 17;
-			// 
-			// button9
-			// 
-			this->button9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button9->FlatAppearance->BorderSize = 0;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(517, 59);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(136, 29);
-			this->button9->TabIndex = 8;
-			this->button9->Text = L"Contact Dealer";
-			this->button9->UseVisualStyleBackColor = true;
 			// 
 			// label31
 			// 
@@ -1113,17 +968,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label34->Size = System::Drawing::Size(38, 16);
 			this->label34->TabIndex = 4;
 			this->label34->Text = L"BHK:";
-			// 
-			// label35
-			// 
-			this->label35->AutoSize = true;
-			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label35->Location = System::Drawing::Point(209, 59);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(119, 16);
-			this->label35->TabIndex = 3;
-			this->label35->Text = L"Builder/Residency";
 			// 
 			// label36
 			// 
@@ -1170,12 +1014,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel6->AutoScroll = true;
 			this->panel6->BackColor = System::Drawing::Color::White;
 			this->panel6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel6->Controls->Add(this->button7);
 			this->panel6->Controls->Add(this->label25);
 			this->panel6->Controls->Add(this->label26);
 			this->panel6->Controls->Add(this->label27);
 			this->panel6->Controls->Add(this->label28);
-			this->panel6->Controls->Add(this->label29);
 			this->panel6->Controls->Add(this->label30);
 			this->panel6->Controls->Add(this->button8);
 			this->panel6->Controls->Add(this->pictureBox5);
@@ -1183,21 +1025,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(676, 143);
 			this->panel6->TabIndex = 21;
-			// 
-			// button7
-			// 
-			this->button7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button7->FlatAppearance->BorderSize = 0;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(517, 59);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(136, 29);
-			this->button7->TabIndex = 8;
-			this->button7->Text = L"Contact Dealer";
-			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// label25
 			// 
@@ -1242,17 +1069,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label28->Size = System::Drawing::Size(38, 16);
 			this->label28->TabIndex = 4;
 			this->label28->Text = L"BHK:";
-			// 
-			// label29
-			// 
-			this->label29->AutoSize = true;
-			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label29->Location = System::Drawing::Point(209, 59);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(119, 16);
-			this->label29->TabIndex = 3;
-			this->label29->Text = L"Builder/Residency";
 			// 
 			// label30
 			// 
@@ -1299,12 +1115,12 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel4->AutoScroll = true;
 			this->panel4->BackColor = System::Drawing::Color::White;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel4->Controls->Add(this->button5);
+			this->panel4->Controls->Add(this->button22);
 			this->panel4->Controls->Add(this->label19);
 			this->panel4->Controls->Add(this->label20);
 			this->panel4->Controls->Add(this->label21);
 			this->panel4->Controls->Add(this->label22);
-			this->panel4->Controls->Add(this->label23);
+			this->panel4->Controls->Add(this->label69);
 			this->panel4->Controls->Add(this->label24);
 			this->panel4->Controls->Add(this->button6);
 			this->panel4->Controls->Add(this->pictureBox4);
@@ -1312,21 +1128,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(676, 143);
 			this->panel4->TabIndex = 20;
-			// 
-			// button5
-			// 
-			this->button5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button5->FlatAppearance->BorderSize = 0;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(517, 59);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(136, 29);
-			this->button5->TabIndex = 8;
-			this->button5->Text = L"Contact Dealer";
-			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// label19
 			// 
@@ -1371,17 +1172,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label22->Size = System::Drawing::Size(38, 16);
 			this->label22->TabIndex = 4;
 			this->label22->Text = L"BHK:";
-			// 
-			// label23
-			// 
-			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(209, 59);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(119, 16);
-			this->label23->TabIndex = 3;
-			this->label23->Text = L"Builder/Residency";
 			// 
 			// label24
 			// 
@@ -1428,12 +1218,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel3->AutoScroll = true;
 			this->panel3->BackColor = System::Drawing::Color::White;
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel3->Controls->Add(this->button3);
 			this->panel3->Controls->Add(this->label13);
 			this->panel3->Controls->Add(this->label14);
 			this->panel3->Controls->Add(this->label15);
 			this->panel3->Controls->Add(this->label16);
-			this->panel3->Controls->Add(this->label17);
 			this->panel3->Controls->Add(this->label18);
 			this->panel3->Controls->Add(this->button4);
 			this->panel3->Controls->Add(this->pictureBox3);
@@ -1441,21 +1229,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(676, 143);
 			this->panel3->TabIndex = 14;
-			// 
-			// button3
-			// 
-			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button3->FlatAppearance->BorderSize = 0;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(517, 59);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(136, 29);
-			this->button3->TabIndex = 8;
-			this->button3->Text = L"Contact Dealer";
-			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// label13
 			// 
@@ -1500,17 +1273,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label16->Size = System::Drawing::Size(38, 16);
 			this->label16->TabIndex = 4;
 			this->label16->Text = L"BHK:";
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label17->Location = System::Drawing::Point(209, 59);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(119, 16);
-			this->label17->TabIndex = 3;
-			this->label17->Text = L"Builder/Residency";
 			// 
 			// label18
 			// 
@@ -1557,12 +1319,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel2->AutoScroll = true;
 			this->panel2->BackColor = System::Drawing::Color::White;
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel2->Controls->Add(this->button1);
 			this->panel2->Controls->Add(this->label7);
 			this->panel2->Controls->Add(this->label8);
 			this->panel2->Controls->Add(this->label9);
 			this->panel2->Controls->Add(this->label10);
-			this->panel2->Controls->Add(this->label11);
 			this->panel2->Controls->Add(this->label12);
 			this->panel2->Controls->Add(this->button2);
 			this->panel2->Controls->Add(this->pictureBox2);
@@ -1570,21 +1330,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(676, 143);
 			this->panel2->TabIndex = 15;
-			// 
-			// button1
-			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(517, 59);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(136, 29);
-			this->button1->TabIndex = 8;
-			this->button1->Text = L"Contact Dealer";
-			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// label7
 			// 
@@ -1629,17 +1374,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label10->Size = System::Drawing::Size(38, 16);
 			this->label10->TabIndex = 4;
 			this->label10->Text = L"BHK:";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(209, 59);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(119, 16);
-			this->label11->TabIndex = 3;
-			this->label11->Text = L"Builder/Residency";
 			// 
 			// label12
 			// 
@@ -1686,12 +1420,10 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel1->AutoScroll = true;
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel1->Controls->Add(this->contact);
 			this->panel1->Controls->Add(this->label6);
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->label3);
-			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->details);
 			this->panel1->Controls->Add(this->pictureBox1);
@@ -1699,21 +1431,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(676, 143);
 			this->panel1->TabIndex = 13;
-			// 
-			// contact
-			// 
-			this->contact->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->contact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->contact->FlatAppearance->BorderSize = 0;
-			this->contact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->contact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->contact->Location = System::Drawing::Point(517, 59);
-			this->contact->Name = L"contact";
-			this->contact->Size = System::Drawing::Size(136, 29);
-			this->contact->TabIndex = 8;
-			this->contact->Text = L"Contact Dealer";
-			this->contact->UseVisualStyleBackColor = true;
 			// 
 			// label6
 			// 
@@ -1758,17 +1475,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->label3->Size = System::Drawing::Size(38, 16);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"BHK:";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(209, 59);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(119, 16);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"Builder/Residency";
 			// 
 			// label1
 			// 
@@ -2086,6 +1792,32 @@ private: System::Windows::Forms::Label^  label73;
 			this->label61->TabIndex = 0;
 			this->label61->Text = L"Refine by Area";
 			// 
+			// label69
+			// 
+			this->label69->AutoSize = true;
+			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label69->Location = System::Drawing::Point(75, -399);
+			this->label69->Name = L"label69";
+			this->label69->Size = System::Drawing::Size(119, 16);
+			this->label69->TabIndex = 3;
+			this->label69->Text = L"Builder/Residency";
+			// 
+			// button22
+			// 
+			this->button22->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->button22->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button22->FlatAppearance->BorderSize = 0;
+			this->button22->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button22->Location = System::Drawing::Point(383, -399);
+			this->button22->Name = L"button22";
+			this->button22->Size = System::Drawing::Size(136, 29);
+			this->button22->TabIndex = 8;
+			this->button22->Text = L"Contact Dealer";
+			this->button22->UseVisualStyleBackColor = true;
+			// 
 			// Buy_form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2170,11 +1902,11 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","","",""
 			};
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
-			 prop_details=gcnew array<String^>(18);
+			 prop_details=gcnew array<String^>(19);
 			 //MessageBox::Show(ids[0]);
 			 totalpages=ceil(ids[0]/10.0);
 			 pageno=1;
@@ -2236,7 +1968,7 @@ private: System::Void button21_Click(System::Object^  sender, System::EventArgs^
 		 }
 private: System::Void button19_Click(System::Object^  sender, System::EventArgs^  e) {
 			props=gcnew array<String^> {
-				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","","",""
 			};
 			ids=gcnew array<Int64>(1000);
 			ids=db.search(props);
@@ -2257,7 +1989,7 @@ private: System::Void button19_Click(System::Object^  sender, System::EventArgs^
 		 }
 private: System::Void button20_Click(System::Object^  sender, System::EventArgs^  e) {
 			props=gcnew array<String^> {
-				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+				"",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","","",""
 			};
 			ids=gcnew array<Int64>(1000);
 			ids=db.search(props);
@@ -2414,7 +2146,7 @@ private: System::Void filter_by_bhk() {
 			 if(checkBox4->Checked==true)bhk+="4,";
 			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","",""
+				 "",cityname,textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,sell_rent,"","","","",bhk,"","","","","","",""
 			 };
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);

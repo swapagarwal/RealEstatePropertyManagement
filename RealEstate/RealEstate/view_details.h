@@ -580,6 +580,7 @@ namespace RealEstate {
 				 floor->Text=det[13];
 				 floor_nu->Text=det[14];
 				 age->Text=det[15];
+				 contact->Text=det[18];
 				 if(det[11]=="Plot")
 				 {
 					 floor->Visible=false;
