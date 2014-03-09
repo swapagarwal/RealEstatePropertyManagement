@@ -35,6 +35,7 @@ namespace RealEstate {
 		array<Int64>^ ids;
 		int pageno,totalpages;
 		array<String^>^ props;
+		String^ bhk;
 
 	public: 
 	private: System::Windows::Forms::ComboBox^  comboBox1;
@@ -1849,52 +1850,67 @@ private: System::Windows::Forms::Label^  label73;
 			// checkBox5
 			// 
 			this->checkBox5->AutoSize = true;
+			this->checkBox5->Checked = true;
+			this->checkBox5->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBox5->Location = System::Drawing::Point(26, 148);
 			this->checkBox5->Name = L"checkBox5";
 			this->checkBox5->Size = System::Drawing::Size(95, 17);
 			this->checkBox5->TabIndex = 12;
 			this->checkBox5->Text = L"5 BHK or more";
 			this->checkBox5->UseVisualStyleBackColor = true;
+			this->checkBox5->CheckedChanged += gcnew System::EventHandler(this, &Buy_form::checkBox5_CheckedChanged);
 			// 
 			// checkBox4
 			// 
 			this->checkBox4->AutoSize = true;
+			this->checkBox4->Checked = true;
+			this->checkBox4->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBox4->Location = System::Drawing::Point(26, 125);
 			this->checkBox4->Name = L"checkBox4";
 			this->checkBox4->Size = System::Drawing::Size(57, 17);
 			this->checkBox4->TabIndex = 11;
 			this->checkBox4->Text = L"4 BHK";
 			this->checkBox4->UseVisualStyleBackColor = true;
+			this->checkBox4->CheckedChanged += gcnew System::EventHandler(this, &Buy_form::checkBox4_CheckedChanged);
 			// 
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
+			this->checkBox3->Checked = true;
+			this->checkBox3->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBox3->Location = System::Drawing::Point(26, 102);
 			this->checkBox3->Name = L"checkBox3";
 			this->checkBox3->Size = System::Drawing::Size(57, 17);
 			this->checkBox3->TabIndex = 10;
 			this->checkBox3->Text = L"3 BHK";
 			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &Buy_form::checkBox3_CheckedChanged);
 			// 
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
+			this->checkBox2->Checked = true;
+			this->checkBox2->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBox2->Location = System::Drawing::Point(26, 78);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(57, 17);
 			this->checkBox2->TabIndex = 9;
 			this->checkBox2->Text = L"2 BHK";
 			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &Buy_form::checkBox2_CheckedChanged);
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
+			this->checkBox1->Checked = true;
+			this->checkBox1->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->checkBox1->Location = System::Drawing::Point(26, 55);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(57, 17);
 			this->checkBox1->TabIndex = 8;
 			this->checkBox1->Text = L"1 BHK";
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &Buy_form::checkBox1_CheckedChanged);
 			// 
 			// label73
 			// 
@@ -2134,13 +2150,19 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 textBox2->Text="2147483647";
 			 textBox4->Text="0";
 			 textBox3->Text="2147483647";
+			 bhk="";
 			 checkBox1->Checked=true;
 			 checkBox2->Checked=true;
 			 checkBox3->Checked=true;
 			 checkBox4->Checked=true;
 			 checkBox5->Checked=true;
+			 if(checkBox1->Checked==true)bhk+="1,";
+			 if(checkBox2->Checked==true)bhk+="2,";
+			 if(checkBox3->Checked==true)bhk+="3,";
+			 if(checkBox4->Checked==true)bhk+="4,";
+			 if(checkBox5->Checked==true)bhk+="5,";
 			 props=gcnew array<String^> {
-				"","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
+				"","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 			};
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -2218,7 +2240,7 @@ private: System::Void button19_Click(System::Object^  sender, System::EventArgs^
 			 else
 			 {
 				 props=gcnew array<String^> {
-					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
+					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 				 };
 				 ids=gcnew array<Int64>(1000);
 				 ids=db.search(props);
@@ -2252,7 +2274,7 @@ private: System::Void button20_Click(System::Object^  sender, System::EventArgs^
 			 else
 			 {
 				 props=gcnew array<String^> {
-					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
+					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
 				 };
 				 ids=gcnew array<Int64>(1000);
 				 ids=db.search(props);
@@ -2386,6 +2408,47 @@ private: System::Void display(int pageno) {
 				 panel11->Show();
 			 }
 			 else this->panel11->Hide();
+		 }
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 filter_by_bhk();
+		 }
+private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 filter_by_bhk();
+		 }
+private: System::Void checkBox3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 filter_by_bhk();
+		 }
+private: System::Void checkBox4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 filter_by_bhk();
+		 }
+private: System::Void checkBox5_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 filter_by_bhk();
+		 }
+private: System::Void filter_by_bhk() {
+			 bhk="";
+			 if(checkBox1->Checked==true)bhk+="1,";
+			 if(checkBox2->Checked==true)bhk+="2,";
+			 if(checkBox3->Checked==true)bhk+="3,";
+			 if(checkBox4->Checked==true)bhk+="4,";
+			 if(checkBox5->Checked==true)bhk+="5,";
+			 props=gcnew array<String^> {
+				 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","",bhk,"","","","","",""
+			 };
+			 ids=gcnew array<Int64>(1000);
+			 ids=db.search(props);
+			 prop_details=gcnew array<String^>(16);
+			 //MessageBox::Show(ids[0]);
+			 totalpages=ceil(ids[0]/10.0);
+			 pageno=1;
+			 //MessageBox::Show(Convert::ToString(totalpages));
+			 comboBox1->BeginUpdate();
+			 for ( int i = 1; i <= totalpages; i++ )
+			 {
+				 comboBox1->Items->Add(i);
+			 }
+			 comboBox1->EndUpdate();
+			 comboBox1->Text=Convert::ToString(pageno);
+			 display(pageno);
 		 }
 };
 }

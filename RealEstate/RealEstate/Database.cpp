@@ -100,13 +100,31 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		int k=0;
 		 for(int i=0;i<18;i++)
 		 {
-			 if(props[i]!="" || props[11]=="0" || props[12]=="0")
+			 if(props[i]!="" )
 			 {
 				 if(count==0)
 				 {
-					 if(i==2 || i==4 || i==11)
+					 if(i==2 || i==4)
 					 {query=query+names[k]+">='"+props[i]+"' AND "+names[k]+"<='"+props[i+1]+"'";++i;}
-					 else if(i==17)
+					 else if(i==11)
+					 {
+						 for(int j=0;j<props[i]->Length;j++)
+						 {
+							 if(props[i][j]!='j')
+							 {
+								 if(props[i][j]!='5')
+								 {
+									 query=query+names[k]+"='"+props[i][j]+"' OR ";
+								 }
+								 else
+								 {
+									 query=query+names[k]+">='"+props[i][j]+"' OR ";
+								 }
+							 }
+						 }
+						 query=query->Remove(query->Length-4);
+					 }
+					 else if(i==16)
 						 query=query+names[k]+"<='"+props[i]+"'";
 					 else
 						 query=query+names[k]+"='"+props[i]+"'";
@@ -115,9 +133,29 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 				 }
 				 else
 				 {
-					 if(i==2 || i==4 || i==11)
+					 if(i==2 || i==4)
 					 {query=query+" AND "+names[k]+">='"+props[i]+"' AND "+names[k]+"<='"+props[i+1]+"'";++i;}
-					 else if(i==17)
+					 else if(i==11)
+					 {
+						 query=query+" AND (";
+						 for(int j=0;j<props[i]->Length;j++)
+						 {
+							 if(props[i][j]!=',')
+							 {
+								 if(props[i][j]!='5')
+								 {
+									 query=query+names[k]+"='"+props[i][j]+"' OR ";
+								 }
+								 else
+								 {
+									 query=query+names[k]+">='"+props[i][j]+"' OR ";
+								 }
+							 }
+						 }
+						 query=query->Remove(query->Length-4);
+						 query=query+")";
+					 }
+					 else if(i==16)
 						 query=query+" AND "+names[k]+"<='"+props[i]+"'";
 					 else
 						 query=query+" AND "+names[k]+"='"+props[i]+"'";
@@ -127,7 +165,7 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 else
 			 {
 				 ++k;
-				  if(i==3 || i==5 || i==12)
+				  if(i==3 || i==5 )
 					  --k;
 			 }
 		 }
@@ -137,7 +175,7 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 MySqlCommand^ rows=gcnew MySqlCommand("SELECT Found_Rows()",connection);
 		 MySqlDataReader^ mydata;
 		 MySqlDataReader^ no_rows;
-		 array<Int64>^ ids;
+ 		 array<Int64>^ ids;
 		 cmd->Connection->Open();
 		 try
 		 {
@@ -149,7 +187,7 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 rows->Connection->Close();
 			cmd->Connection->Open();
 			mydata=cmd->ExecuteReader();
-			ids=gcnew array<Int64>(1000);
+ 			ids=gcnew array<Int64>(1000);
 			for(int i=0;i<1000;i++)
 				ids[i]=(-1);
 			int i;
@@ -164,7 +202,7 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 			 MessageBox::Show(ex->Message);
 		 }
 		 cmd->Connection->Close();
-		 return ids;
+ 		 return ids;
 	  }
 	 array<String^>^ Database::get_user_details(String^ user, String^ pass)
 	 {
@@ -209,4 +247,21 @@ bool Database::login_verify(String^ user, String^ pass) // Function to check the
 		 }
 		 cmd->Connection->Close();
 		 return details;
+	 }
+	 void Database::update_property_details(array<String^>^ details)
+	 {
+		 String^ s="Update repm.users Set name='"+details[0]+"', email='"+details[1]+"', contact='"+details[2]+"', location='"+details[3]+"' where id='"+details[4]+"';";
+		 MySqlCommand^ cmd=gcnew MySqlCommand(s,connection);
+		 try
+		 {
+			 cmd->Connection->Open();
+			 cmd->ExecuteNonQuery();
+			 cmd->Connection->Close();
+		 }
+		 catch(Exception^ ex)
+		 {
+			 cmd->Connection->Close();
+			 MessageBox::Show(ex->Message);
+		 }
+
 	 }

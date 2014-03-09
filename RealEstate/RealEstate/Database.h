@@ -26,5 +26,7 @@ public:
 
 	 // Get all details of property by sending the property id.
 	 array<String^>^ get_property_details(int id); 
+
+	 void update_property_details(array<String^>^ details);
 };
 
