@@ -341,8 +341,6 @@ private: System::Windows::Forms::Label^  label73;
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Buy_form::typeid));
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->button21 = (gcnew System::Windows::Forms::Button());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
 			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->label55 = (gcnew System::Windows::Forms::Label());
@@ -443,6 +441,8 @@ private: System::Windows::Forms::Label^  label73;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->details = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel12 = (gcnew System::Windows::Forms::Panel());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
@@ -518,24 +518,6 @@ private: System::Windows::Forms::Label^  label73;
 			this->panel5->Size = System::Drawing::Size(770, 733);
 			this->panel5->TabIndex = 11;
 			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Buy_form::panel5_Paint);
-			// 
-			// button21
-			// 
-			this->button21->Location = System::Drawing::Point(56, 680);
-			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(75, 23);
-			this->button21->TabIndex = 24;
-			this->button21->Text = L"Go to Page";
-			this->button21->UseVisualStyleBackColor = true;
-			this->button21->Click += gcnew System::EventHandler(this, &Buy_form::button21_Click);
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(31, 653);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
-			this->comboBox1->TabIndex = 23;
 			// 
 			// panel11
 			// 
@@ -1817,6 +1799,24 @@ private: System::Windows::Forms::Label^  label73;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
+			// button21
+			// 
+			this->button21->Location = System::Drawing::Point(56, 680);
+			this->button21->Name = L"button21";
+			this->button21->Size = System::Drawing::Size(75, 23);
+			this->button21->TabIndex = 24;
+			this->button21->Text = L"Go to Page";
+			this->button21->UseVisualStyleBackColor = true;
+			this->button21->Click += gcnew System::EventHandler(this, &Buy_form::button21_Click);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(31, 653);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 23;
+			// 
 			// panel12
 			// 
 			this->panel12->BackColor = System::Drawing::Color::White;
@@ -1949,6 +1949,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button20->TabIndex = 5;
 			this->button20->Text = L"Refine";
 			this->button20->UseVisualStyleBackColor = true;
+			this->button20->Click += gcnew System::EventHandler(this, &Buy_form::button20_Click);
 			// 
 			// textBox3
 			// 
@@ -2015,6 +2016,7 @@ private: System::Windows::Forms::Label^  label73;
 			this->button19->TabIndex = 5;
 			this->button19->Text = L"Refine";
 			this->button19->UseVisualStyleBackColor = true;
+			this->button19->Click += gcnew System::EventHandler(this, &Buy_form::button19_Click);
 			// 
 			// textBox2
 			// 
@@ -2128,8 +2130,17 @@ private: System::Void radioButton4_CheckedChanged(System::Object^  sender, Syste
 private: System::Void label62_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^  e) {
+			 textBox1->Text="0";
+			 textBox2->Text="2147483647";
+			 textBox4->Text="0";
+			 textBox3->Text="2147483647";
+			 checkBox1->Checked=true;
+			 checkBox2->Checked=true;
+			 checkBox3->Checked=true;
+			 checkBox4->Checked=true;
+			 checkBox5->Checked=true;
 			 props=gcnew array<String^> {
-				"","","0","2147483647","0","2147483647","","","","","","1","2147483647","","","","","",""
+				"","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
 			};
 			 ids=gcnew array<Int64>(1000);
 			 ids=db.search(props);
@@ -2145,109 +2156,7 @@ private: System::Void Buy_form_Load(System::Object^  sender, System::EventArgs^ 
 			 }
 			 comboBox1->EndUpdate();
 			 comboBox1->Text=Convert::ToString(pageno);
-			 if(ids[1]!=-1){
-				 //MessageBox::Show(ids[1]);
-				 prop_details=db.get_property_details(ids[1]);
-				 //MessageBox::Show(prop_details[10]);
-				 label1->Text="Address: "+prop_details[1];
-				 label3->Text=prop_details[10]+" BHK";
-				 label4->Text="Area: "+prop_details[3];
-				 label5->Text="Price: "+prop_details[4];
-				 label6->Text="Seller: "+prop_details[9];
-				 pictureBox1->ImageLocation=prop_details[6];
-				 //MessageBox::Show(prop_details[6]);
-			 }
-			 else this->panel1->Hide();
-			 if(ids[2]!=-1){
-				 prop_details=db.get_property_details(ids[2]);
-				 label12->Text="Address: "+prop_details[1];
-				 label10->Text=prop_details[10]+" BHK";
-				 label9->Text="Area: "+prop_details[3];
-				 label8->Text="Price: "+prop_details[4];
-				 label7->Text="Seller: "+prop_details[9];
-				 pictureBox2->ImageLocation=prop_details[6];
-			 }
-			 else this->panel2->Hide();
-			 if(ids[3]!=-1){
-				 prop_details=db.get_property_details(ids[3]);
-				 label18->Text="Address: "+prop_details[1];
-				 label16->Text=prop_details[10]+" BHK";
-				 label15->Text="Area: "+prop_details[3];
-				 label14->Text="Price: "+prop_details[4];
-				 label13->Text="Seller: "+prop_details[9];
-				 pictureBox3->ImageLocation=prop_details[6];
-			 }
-			 else this->panel3->Hide();
-			 if(ids[4]!=-1){
-				 prop_details=db.get_property_details(ids[4]);
-				 label24->Text="Address: "+prop_details[1];
-				 label22->Text=prop_details[10]+" BHK";
-				 label21->Text="Area: "+prop_details[3];
-				 label20->Text="Price: "+prop_details[4];
-				 label19->Text="Seller: "+prop_details[9];
-				 pictureBox4->ImageLocation=prop_details[6];
-			 }
-			 else this->panel4->Hide();
-			 if(ids[5]!=-1){
-				 prop_details=db.get_property_details(ids[5]);
-				 label30->Text="Address: "+prop_details[1];
-				 label28->Text=prop_details[10]+" BHK";
-				 label27->Text="Area: "+prop_details[3];
-				 label26->Text="Price: "+prop_details[4];
-				 label25->Text="Seller: "+prop_details[9];
-				 pictureBox5->ImageLocation=prop_details[6];
-			 }
-			 else this->panel6->Hide();
-			 if(ids[6]!=-1){
-				 prop_details=db.get_property_details(ids[6]);
-				 label36->Text="Address: "+prop_details[1];
-				 label34->Text=prop_details[10]+" BHK";
-				 label33->Text="Area: "+prop_details[3];
-				 label32->Text="Price: "+prop_details[4];
-				 label31->Text="Seller: "+prop_details[9];
-				 pictureBox6->ImageLocation=prop_details[6];
-			 }
-			 else this->panel7->Hide();
-			 if(ids[7]!=-1){
-				 prop_details=db.get_property_details(ids[7]);
-				 label42->Text="Address: "+prop_details[1];
-				 label40->Text=prop_details[10]+" BHK";
-				 label39->Text="Area: "+prop_details[3];
-				 label38->Text="Price: "+prop_details[4];
-				 label37->Text="Seller: "+prop_details[9];
-				 pictureBox7->ImageLocation=prop_details[6];
-			 }
-			 else this->panel8->Hide();
-			 if(ids[8]!=-1){
-				 prop_details=db.get_property_details(ids[8]);
-				 label48->Text="Address: "+prop_details[1];
-				 label46->Text=prop_details[10]+" BHK";
-				 label45->Text="Area: "+prop_details[3];
-				 label44->Text="Price: "+prop_details[4];
-				 label43->Text="Seller: "+prop_details[9];
-				 pictureBox8->ImageLocation=prop_details[6];
-			 }
-			 else this->panel9->Hide();
-			 if(ids[9]!=-1){
-				 prop_details=db.get_property_details(ids[9]);
-				 label54->Text="Address: "+prop_details[1];
-				 label52->Text=prop_details[10]+" BHK";
-				 label51->Text="Area: "+prop_details[3];
-				 label50->Text="Price: "+prop_details[4];
-				 label49->Text="Seller: "+prop_details[9];
-				 pictureBox9->ImageLocation=prop_details[6];
-			 }
-			 else this->panel10->Hide();
-			 if(ids[10]!=-1){
-				 prop_details=db.get_property_details(ids[10]);
-				 label60->Text="Address: "+prop_details[1];
-				 label58->Text=prop_details[10]+" BHK";
-				 label57->Text="Area: "+prop_details[3];
-				 label56->Text="Price: "+prop_details[4];
-				 label55->Text="Seller: "+prop_details[9];
-				 pictureBox10->ImageLocation=prop_details[6];
-			 }
-			 else this->panel11->Hide();
+			 display(pageno);
 
 			 /*System::Windows::Forms::Panel^  panel100;
 			 System::Windows::Forms::Label^  label100;
@@ -2293,7 +2202,77 @@ private: System::Void label69_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button21_Click(System::Object^  sender, System::EventArgs^  e) {
 			 pageno=Convert::ToInt32(comboBox1->Text);
 			 //MessageBox::Show(Convert::ToString(pageno));
-
+			 display(pageno);
+		 }
+private: System::Void button19_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(Convert::ToInt32(textBox1->Text)<0 && Convert::ToInt32(textBox1->Text)>2147483647)
+			 {
+				 //MessageBox::Show(textBox1->Text);
+				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
+			 }
+			 else if(Convert::ToInt32(textBox2->Text)<0 && Convert::ToInt32(textBox2->Text)>2147483647)
+			 {
+				 //MessageBox::Show(textBox2->Text);
+				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
+			 }
+			 else
+			 {
+				 props=gcnew array<String^> {
+					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
+				 };
+				 ids=gcnew array<Int64>(1000);
+				 ids=db.search(props);
+				 prop_details=gcnew array<String^>(16);
+				 //MessageBox::Show(ids[0]);
+				 totalpages=ceil(ids[0]/10.0);
+				 pageno=1;
+				 //MessageBox::Show(Convert::ToString(totalpages));
+				 comboBox1->BeginUpdate();
+				 comboBox1->Items->Clear();
+				 for ( int i = 1; i <= totalpages; i++ )
+				 {
+					 comboBox1->Items->Add(i);
+				 }
+				 comboBox1->EndUpdate();
+				 comboBox1->Text=Convert::ToString(pageno);
+				 display(pageno);
+			 }
+		 }
+private: System::Void button20_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(Convert::ToInt32(textBox4->Text)<0 && Convert::ToInt32(textBox4->Text)>2147483647)
+			 {
+				 //MessageBox::Show(textBox4->Text);
+				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
+			 }
+			 else if(Convert::ToInt32(textBox3->Text)<0 && Convert::ToInt32(textBox3->Text)>2147483647)
+			 {
+				 //MessageBox::Show(textBox3->Text);
+				 MessageBox::Show("Please enter a value between 0 and 2147483647.");
+			 }
+			 else
+			 {
+				 props=gcnew array<String^> {
+					 "","",textBox1->Text,textBox2->Text,textBox4->Text,textBox3->Text,"","","","","","1","2147483647","","","","","",""
+				 };
+				 ids=gcnew array<Int64>(1000);
+				 ids=db.search(props);
+				 prop_details=gcnew array<String^>(16);
+				 //MessageBox::Show(ids[0]);
+				 totalpages=ceil(ids[0]/10.0);
+				 pageno=1;
+				 //MessageBox::Show(Convert::ToString(totalpages));
+				 comboBox1->BeginUpdate();
+				 comboBox1->Items->Clear();
+				 for ( int i = 1; i <= totalpages; i++ )
+				 {
+					 comboBox1->Items->Add(i);
+				 }
+				 comboBox1->EndUpdate();
+				 comboBox1->Text=Convert::ToString(pageno);
+				 display(pageno);
+			 }
+		 }
+private: System::Void display(int pageno) {
 			 if(ids[1+10*(pageno-1)]!=-1){
 				 //MessageBox::Show(ids[1]);
 				 prop_details=db.get_property_details(ids[1+10*(pageno-1)]);
