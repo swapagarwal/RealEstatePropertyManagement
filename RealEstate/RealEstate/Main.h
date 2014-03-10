@@ -632,7 +632,8 @@ private: System::Void Logout_Click(System::Object^  sender, System::EventArgs^  
 		 }
 private: System::Void myaccount_Click(System::Object^  sender, System::EventArgs^  e) {
 			 logoutpanel->Visible = false;
-			 profile^ f3 = gcnew profile();
+			 profile^ f3 = gcnew profile(details,this);
+			 this->Hide();
 			 f3->ShowDialog();
 		 }
 private: System::Void city_MouseClick_1(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
